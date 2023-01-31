@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private GameObject cam;
     [Header("Stuff to export")]
-    public static Transform PlayerPosition;
+    public static Transform PlayerTransform;
 
 
     // Start is called before the first frame update
@@ -25,12 +25,12 @@ public class PlayerMovement : MonoBehaviour
             cam = Camera.main.gameObject;
         }
         Cursor.lockState = CursorLockMode.Locked;
+        PlayerTransform = transform;
     }
 
     // Update is called once per frame
     private void Update()
     {
-        PlayerPosition = transform;
         Walking();
         CameraMovement();
     }
