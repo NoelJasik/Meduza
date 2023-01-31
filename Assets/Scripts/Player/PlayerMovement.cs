@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,8 +16,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Stuff to export")]
     public static Transform PlayerTransform;
 
+    // In awake, because other scripts already need player transform in their start method
+    private void Awake()
+    {
+        PlayerTransform = transform;
+    }
 
-    // Start is called before the first frame update
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -25,10 +30,8 @@ public class PlayerMovement : MonoBehaviour
             cam = Camera.main.gameObject;
         }
         Cursor.lockState = CursorLockMode.Locked;
-        PlayerTransform = transform;
     }
 
-    // Update is called once per frame
     private void Update()
     {
         Walking();

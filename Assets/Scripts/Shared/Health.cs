@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
 
     public virtual void ReceiveDamage(float dmg)
     {
+        print(gameObject.name + " received " + dmg + " damage");
         currentHitPoints -= dmg;
         if (currentHitPoints <= 0)
         {
