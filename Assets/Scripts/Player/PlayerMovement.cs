@@ -34,15 +34,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Walking();
         CameraMovement();
     }
     private void FixedUpdate()
     {
-        rb.AddForce(-rb.velocity * friction);
+        Walking();
+        Friction();
     }
-    
-    void CameraMovement()
+
+    private void CameraMovement()
     {
         transform.Rotate(0, Input.GetAxis("Mouse X") * Settings.Dpi, 0);
         cam.transform.Rotate(-Input.GetAxis("Mouse Y") * Settings.Dpi, 0, 0);
@@ -55,14 +55,22 @@ public class PlayerMovement : MonoBehaviour
             cam.transform.localEulerAngles = new Vector3(300, 0, 0);
         }
     }
-    void Walking()
+
+    private void Friction()
+    {
+        Vector3 velocity = rb.velocity;
+        Vector3 firctionForce = new Vector3(-velocity.x * friction, 0, -velocity.z * friction);
+        rb.AddForce(firctionForce);
+    }
+
+    private void Walking()
     {
         float inputVertical = Input.GetAxis("Vertical");
         float inputHorizontal = Input.GetAxis("Horizontal");
 
         Vector3 movement = new Vector3(inputHorizontal, 0, inputVertical);
-        movement = cam.transform.TransformDirection(movement);
-        movement.Normalize();
+        movement = transform.TransformDirection(movement);
+        movement = movement.normalized;
         movement *= accelerationSpeed;
         movement *= Time.deltaTime;
         Vector3 finalMovement = new Vector3(movement.x, 0, movement.z);
@@ -70,7 +78,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.velocity.magnitude > maxSpeed)
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            Vector3 velocity = rb.velocity;
+            Vector3 maxVelocity = new Vector3(velocity.normalized.x * maxSpeed, velocity.y, velocity.normalized.z * maxSpeed);
+            velocity = maxVelocity;
+            rb.velocity = velocity;
         }
     }
     

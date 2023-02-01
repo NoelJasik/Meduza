@@ -370,8 +370,9 @@ GameObject:
   - component: {fileID: 1529399345}
   - component: {fileID: 1529399344}
   - component: {fileID: 1529399349}
+  - component: {fileID: 1529399350}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,7 +386,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529399343}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -486,10 +487,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd89c5df2161cd6485a2210b835a252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  accelerationSpeed: 100
+  accelerationSpeed: 150
   maxSpeed: 10
   jumpForce: 5
   friction: 30
+--- !u!114 &1529399350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529399343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20e1e3d659e1440b9d40117377e3ff75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHitPoints: 0
+  hurtSound: {fileID: 8300000, guid: 1dc2a541bde1242be9b488cf7b14d0f1, type: 3}
 --- !u!1 &1566445322
 GameObject:
   m_ObjectHideFlags: 0
