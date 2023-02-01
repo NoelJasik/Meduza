@@ -200,6 +200,13 @@ public class PlayerMovement : MonoBehaviour
             isTouchingGround = true;
         }
     }
+    private void OnCollisionStay(Collision other)
+    {
+        if(other.gameObject.layer == 10 || other.gameObject.layer == 11)
+        {
+            isTouchingGround = true;
+        }
+    }
     
     private void OnCollisionExit(Collision other)
     {
