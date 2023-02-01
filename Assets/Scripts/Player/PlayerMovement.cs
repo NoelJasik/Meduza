@@ -114,8 +114,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Walking()
     {
-        float inputVertical = Input.GetAxis("Vertical");
-        float inputHorizontal = Input.GetAxis("Horizontal");
+        float inputVertical = Input.GetAxisRaw("Vertical");
+        float inputHorizontal = Input.GetAxisRaw("Horizontal");
 
         Vector3 movement = new Vector3(inputHorizontal, 0, inputVertical);
         movement = transform.TransformDirection(movement);
