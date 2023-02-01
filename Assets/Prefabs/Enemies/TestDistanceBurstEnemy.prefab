@@ -143,7 +143,6 @@ GameObject:
   - component: {fileID: 4403448106568711273}
   - component: {fileID: 4403448106568711266}
   - component: {fileID: 4403448106568711268}
-  - component: {fileID: 4403448106568712088}
   - component: {fileID: 4403448106568712089}
   m_Layer: 8
   m_Name: TestDistanceBurstEnemy
@@ -284,26 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 10
---- !u!114 &4403448106568712088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4403448106568711276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ffed1f51d07427094781f6980d6714a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerDistance: 20
-  attackDistance: 8
-  rechargeTime: 1
-  damage: 1
-  projectilePrefab: {fileID: 8320802165472883533, guid: 98bb07dd8ca054d5aada19c8f685315b,
-    type: 3}
-  shootPoint: {fileID: 4403448105690920607}
-  projectileSpeed: 3
+  hurtSound: {fileID: 0}
 --- !u!114 &4403448106568712089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,5 +304,5 @@ MonoBehaviour:
     type: 3}
   shootPoint: {fileID: 4403448105690920607}
   projectileSpeed: 3
-  timeBetweenProjectilesInBurst: 0.1
+  timeBetweenProjectilesInBurst: 0.25
   amountOfProjectileInBurst: 5
