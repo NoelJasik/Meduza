@@ -53,9 +53,7 @@ public class EnemyWeapon : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
-        projectile.GetComponent<Projectile>().Initialize(PlayerMovement.PlayerTransform.position, 
-            shootDamage, projectileSpeed, enemyProjectileLayer);
+        
     }
 
     public float GetShootDistance() => shootDistance;
