@@ -17,7 +17,11 @@ public class PlayerCombat : MonoBehaviour
     [SerializeField] private float blockCooldown;
     [SerializeField] private float projectileHoldTime;
     [SerializeField] private float holdedProjectileSpeed;
+    [SerializeField] private float holdedProjectileDamage;
     [SerializeField] private float maxBlockingSpeed;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Transform barrel;
+    [SerializeField] private Transform hitPoint;
 
     [Header("Private Variables")]
     private float swingCooldownTimer;
@@ -28,6 +32,8 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("References")] 
     [SerializeField] Animator anim;
+
+    [SerializeField] private Animator swordAnim;
     
     [Header("Stuff to export")]
     public static bool IsBlocking;
@@ -49,6 +55,7 @@ public class PlayerCombat : MonoBehaviour
     void Start()
     {
         playerBaseSpeed = PlayerMovement.ActualMaxSpeed;
+        projectileHoldTimer = projectileHoldTime;
     }
 
     // Update is called once per frame
@@ -56,6 +63,7 @@ public class PlayerCombat : MonoBehaviour
     {
         Swing();
         Block();
+        absorbtionZone.SetActive(IsSwinging || IsBlocking);
     }
 
     void Swing()
@@ -66,9 +74,14 @@ public class PlayerCombat : MonoBehaviour
             IsSwinging = true;
             swingDurationTimer = swingTime;
             swingCooldownTimer = swingCooldown;
+            if (IsHoldingProjectile)
+            {
+                GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
+                projectile.GetComponent<Projectile>().Initialize(hitPoint.position, holdedProjectileDamage , holdedProjectileSpeed, LayerMask.NameToLayer("PlayerProjectile"));
+                IsHoldingProjectile = false;
+            }
         }
-
-        absorbtionZone.SetActive(IsSwinging);
+        
         swingDurationTimer -= Time.deltaTime;
         swingCooldownTimer -= Time.deltaTime;
 
@@ -81,7 +94,27 @@ public class PlayerCombat : MonoBehaviour
     void Block()
     {
         anim.SetBool("Block", IsBlocking);
-        IsBlocking = Input.GetButton("Fire2") && !IsHoldingProjectile && !IsSwinging;
+        swordAnim.SetBool("Hold", IsHoldingProjectile);
+        IsBlocking = Input.GetButton("Fire2") && !IsHoldingProjectile && !IsSwinging && blockCooldownTimer < 0;
         PlayerMovement.ActualMaxSpeed = IsBlocking ? maxBlockingSpeed : playerBaseSpeed;
+        
+        if (IsBlocking && Input.GetButtonUp("Fire2"))
+        {
+            blockCooldownTimer = blockCooldown;
+        }
+        else
+        {
+            blockCooldownTimer -= Time.deltaTime;
+        }
+        
+        if(IsHoldingProjectile)
+        {
+            projectileHoldTimer -= Time.deltaTime;
+            if (projectileHoldTimer < 0)
+            {
+                IsHoldingProjectile = false;
+                projectileHoldTimer = projectileHoldTime;
+            }
+        }
     }
 }
