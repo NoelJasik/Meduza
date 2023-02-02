@@ -272,7 +272,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 10
-  hurtSound: {fileID: 8300000, guid: 1dc2a541bde1242be9b488cf7b14d0f1, type: 3}
+  hurtSounds:
+  - {fileID: 8300000, guid: 1dc2a541bde1242be9b488cf7b14d0f1, type: 3}
+  - {fileID: 8300000, guid: c8ee377c4cf824a52b1c063fa7eeb342, type: 3}
+  - {fileID: 8300000, guid: aebd114b7b8c84e07a32c3a0bc04cac3, type: 3}
+  - {fileID: 8300000, guid: 51d7acccf45274883aa263aa05d9be69, type: 3}
+  - {fileID: 8300000, guid: 1f716e8af2b394f7da9a37defee037cb, type: 3}
 --- !u!114 &471478426
 MonoBehaviour:
   m_ObjectHideFlags: 0

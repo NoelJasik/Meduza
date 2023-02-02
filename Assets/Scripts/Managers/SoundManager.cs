@@ -23,4 +23,10 @@ public class SoundManager : MonoBehaviour
         newSource.Play();
         Destroy(newSource.gameObject, clip.length);
     }
+
+    public void PlayRandom(AudioClip[] clips)
+    {
+        int rand = Random.Range(0, clips.Length);
+        PlaySound(clips[rand]);
+    }
 }
