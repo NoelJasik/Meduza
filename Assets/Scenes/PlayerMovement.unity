@@ -1148,6 +1148,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 194783398824368574, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6065604484696983632, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192423885358582558, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192423885727621650, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6192423886023894978, guid: e17d57273aef656d0a10e9e504aba38e,
         type: 3}
       propertyPath: m_Name
@@ -1207,6 +1227,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192423886688674648, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326855031117432161, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6326855031117432161, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859672351553558747, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8552993051314253783, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8609903627656511244, guid: e17d57273aef656d0a10e9e504aba38e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e17d57273aef656d0a10e9e504aba38e, type: 3}
