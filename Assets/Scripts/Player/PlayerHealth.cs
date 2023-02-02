@@ -20,4 +20,15 @@ public class PlayerHealth : Health
         currentHitPoints = maxHitPoints;
         transform.position = startPos;
     }
+
+    public float GetCurrentHealth()
+    {
+        return currentHitPoints;
+    }
+    
+    public float GetMaxHealth()
+    {
+        return maxHitPoints;
+    }
+
 }
