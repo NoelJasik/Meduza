@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6192423885358582558}
   - component: {fileID: 6192423885358582555}
   - component: {fileID: 6192423885358582552}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6192423885727621650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -129,7 +129,8 @@ GameObject:
   - component: {fileID: 6192423886023895005}
   - component: {fileID: 6192423886023895000}
   - component: {fileID: 6192423886023895003}
-  m_Layer: 0
+  - component: {fileID: 471478426}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,8 +271,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e1e3d659e1440b9d40117377e3ff75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 0
+  maxHitPoints: 10
   hurtSound: {fileID: 8300000, guid: 1dc2a541bde1242be9b488cf7b14d0f1, type: 3}
+--- !u!114 &471478426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6192423886023894978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9e31eb6fa3544088a673ff769ca036b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 8320802165472883533, guid: 98bb07dd8ca054d5aada19c8f685315b,
+    type: 3}
+  projectileSpeed: 3
+  damage: 1
 --- !u!1 &6192423886688674655
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +301,7 @@ GameObject:
   - component: {fileID: 6192423886688674649}
   - component: {fileID: 6192423886688674654}
   - component: {fileID: 6192423886688674651}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}

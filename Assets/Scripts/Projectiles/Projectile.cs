@@ -1,12 +1,14 @@
+using Unity.Collections;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Vector3 direction;
+    public Vector3 Direction { get; set; }
     private float damage;
     private float speed;
     
     private Health targetHealth;
+    private Mirror targetMirror;
     
     // Projectile layer 
     // There is a layer for enemies projectiles and for players projectiles
@@ -14,7 +16,7 @@ public class Projectile : MonoBehaviour
     // The layers interaction is in the Project settings -> Physics2D 
     public void Initialize(Vector3 targetPos, float dmg, float projSpeed, int projectileLayer)
     {
-        direction = (targetPos - transform.position).normalized;
+        Direction = (targetPos - transform.position).normalized;
         speed = projSpeed;
         damage = dmg;
         gameObject.layer = projectileLayer;
@@ -22,16 +24,21 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        transform.position += direction * (speed * Time.deltaTime);
+        transform.position += Direction * (speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider col)
     {
+        if (col.TryGetComponent(out targetMirror))
+        {
+            targetMirror.Reflect(this);
+            return;
+        }
+        
         if (col.TryGetComponent(out targetHealth))
         {
             targetHealth.ReceiveDamage(damage);
         }
-        // else if hits mirror then ... (and without DestroyBullet())
         
         DestroyBullet();
     }
