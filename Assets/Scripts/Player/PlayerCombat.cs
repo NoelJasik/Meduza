@@ -79,6 +79,7 @@ public class PlayerCombat : MonoBehaviour
                 GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
                 projectile.GetComponent<Projectile>().Initialize(hitPoint.position, holdedProjectileDamage , holdedProjectileSpeed, LayerMask.NameToLayer("PlayerProjectile"));
                 IsHoldingProjectile = false;
+                projectileHoldTimer = projectileHoldTime;
             }
         }
         
