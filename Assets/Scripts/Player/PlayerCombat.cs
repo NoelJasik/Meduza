@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,33 +6,45 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     [Header("Shared Stats")]
-    [SerializeField] private float range;
+    [SerializeField] private GameObject absorbtionZone;
     [Header("Swing")]
     [SerializeField] private float swingDamage;
+    [SerializeField] private float reflectDamage;
     [SerializeField] private float swingCooldown;
     [SerializeField] private float swingTime;
-    [SerializeField] private float deflectedProjectileSpeed;
+    [SerializeField] private float projectileDeflectSpeed;
     [Header("Block")]
     [SerializeField] private float blockCooldown;
     [SerializeField] private float projectileHoldTime;
     [SerializeField] private float holdedProjectileSpeed;
     [SerializeField] private float maxBlockingSpeed;
-    
+
     [Header("Private Variables")]
     private float swingCooldownTimer;
     private float blockCooldownTimer;
     private float swingDurationTimer;
     private float projectileHoldTimer;
-    private bool isHoldingProjectile;
-    private bool isBlocking;
-    private bool isSwinging;
     private float playerBaseSpeed;
 
     [Header("References")] 
     [SerializeField] Animator anim;
     
-    
-    
+    [Header("Stuff to export")]
+    public static bool IsBlocking;
+    public static bool IsSwinging;
+    public static bool IsHoldingProjectile;
+    public static float ActualSwingDamage;
+    public static float ActualReflectDamage;
+    public static float ActualProjectileDeflectSpeed;
+
+
+    private void Awake()
+    {
+        ActualSwingDamage = swingDamage;
+        ActualReflectDamage = reflectDamage;
+        ActualProjectileDeflectSpeed = projectileDeflectSpeed;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,27 +60,28 @@ public class PlayerCombat : MonoBehaviour
 
     void Swing()
     {
-        if (Input.GetButtonDown("Fire1") && swingCooldownTimer < 0 && !isSwinging && !isBlocking)
+        if (Input.GetButtonDown("Fire1") && swingCooldownTimer < 0 && !IsSwinging && !IsBlocking)
         {
             anim.Play("Slice");
-            isSwinging = true;
+            IsSwinging = true;
             swingDurationTimer = swingTime;
             swingCooldownTimer = swingCooldown;
         }
 
+        absorbtionZone.SetActive(IsSwinging);
         swingDurationTimer -= Time.deltaTime;
         swingCooldownTimer -= Time.deltaTime;
 
         if (swingDurationTimer < 0)
         {
-            isSwinging = false;
+            IsSwinging = false;
         }
     }
     
     void Block()
     {
-        anim.SetBool("Block", isBlocking);
-        isBlocking = Input.GetButton("Fire2") && !isHoldingProjectile && !isSwinging;
-        PlayerMovement.ActualMaxSpeed = isBlocking ? maxBlockingSpeed : playerBaseSpeed;
+        anim.SetBool("Block", IsBlocking);
+        IsBlocking = Input.GetButton("Fire2") && !IsHoldingProjectile && !IsSwinging;
+        PlayerMovement.ActualMaxSpeed = IsBlocking ? maxBlockingSpeed : playerBaseSpeed;
     }
 }

@@ -49,7 +49,7 @@ GameObject:
   - component: {fileID: 128977942470744782}
   m_Layer: 8
   m_Name: DistanceEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,6 +186,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 10
+  hurtSounds:
+  - {fileID: 8300000, guid: 4c94ba9b4e607413788654b1bc8317e2, type: 3}
+  - {fileID: 8300000, guid: f4bbec83185b44cdbaae925362e38b0e, type: 3}
+  - {fileID: 8300000, guid: f4bbec83185b44cdbaae925362e38b0e, type: 3}
 --- !u!114 &128977942470744782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,14 +202,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ffed1f51d07427094781f6980d6714a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: 20
-  attackDistance: 8
+  triggerDistance: 30
+  attackDistance: 20
   rechargeTime: 1
   damage: 1
   projectilePrefab: {fileID: 8320802165472883533, guid: 98bb07dd8ca054d5aada19c8f685315b,
     type: 3}
   shootPoint: {fileID: 128977941192397769}
-  projectileSpeed: 3
+  projectileSpeed: 8
 --- !u!1 &128977942651660513
 GameObject:
   m_ObjectHideFlags: 0

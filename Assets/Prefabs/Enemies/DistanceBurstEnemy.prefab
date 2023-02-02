@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 4403448106568712089}
   m_Layer: 8
   m_Name: DistanceBurstEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHitPoints: 10
-  hurtSound: {fileID: 0}
+  hurtSounds: []
 --- !u!114 &4403448106568712089
 MonoBehaviour:
   m_ObjectHideFlags: 0

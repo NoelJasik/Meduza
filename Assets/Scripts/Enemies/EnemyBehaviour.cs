@@ -52,4 +52,13 @@ public abstract class EnemyBehaviour : MonoBehaviour
     }
     
     protected abstract void Attack();
+    
+    // added gizmos
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, triggerDistance);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
+    }
 }

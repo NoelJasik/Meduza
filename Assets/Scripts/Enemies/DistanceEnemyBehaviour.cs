@@ -17,4 +17,5 @@ public class DistanceEnemyBehaviour : EnemyBehaviour
         projectile.GetComponent<Projectile>().Initialize(PlayerMovement.PlayerTransform.position, 
             damage, projectileSpeed, LayerMask.NameToLayer("EnemyProjectile"));
     }
+    
 }

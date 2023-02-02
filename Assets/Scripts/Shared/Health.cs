@@ -1,10 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] protected float maxHitPoints;
     [SerializeField] private AudioClip[] hurtSounds;
-    
+
     protected float currentHitPoints;
     protected virtual void Start()
     {
@@ -20,6 +21,15 @@ public class Health : MonoBehaviour
         {
             Death();
         }
+
+        StartCoroutine(flash());
+    }
+
+    IEnumerator flash()
+    {
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 
     protected virtual void Death()
