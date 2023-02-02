@@ -3,7 +3,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] protected float maxHitPoints;
-    [SerializeField] private AudioClip hurtSound;
+    [SerializeField] private AudioClip[] hurtSounds;
     
     protected float currentHitPoints;
     protected virtual void Start()
@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
     public virtual void ReceiveDamage(float dmg)
     {
         print(gameObject.name + " received " + dmg + " damage");
-        SoundManager.Instance.PlaySound(hurtSound);
+        SoundManager.Instance.PlayRandom(hurtSounds);
         currentHitPoints -= dmg;
         if (currentHitPoints <= 0)
         {
