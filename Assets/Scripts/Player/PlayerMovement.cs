@@ -69,8 +69,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        CameraMovement();
         CanJump();
+        CameraMovement();
     }
     private void FixedUpdate()
     {
@@ -110,8 +110,8 @@ public class PlayerMovement : MonoBehaviour
     private void Friction()
     {
         Vector3 velocity = rb.velocity;
-        Vector3 firctionForce = new Vector3(-velocity.x * friction, 0, -velocity.z * friction);
-        rb.AddForce(firctionForce);
+        Vector3 frictionForce = new Vector3(-velocity.x * friction, 0, -velocity.z * friction);
+        rb.AddForce(frictionForce);
     }
 
     private void Walking()
@@ -141,9 +141,9 @@ public class PlayerMovement : MonoBehaviour
     private void CanJump()
     {
         Collider[] hitColliders = new Collider[1];
-        isGrounded = Physics.OverlapSphereNonAlloc(groundChecker.position, groundCheckRadius, hitColliders,whatIsGround) == 1;
+        isGrounded = Physics.OverlapSphereNonAlloc(groundChecker.position, groundCheckRadius, hitColliders,whatIsGround) == 1 && rb.velocity.y < 0.05 && rb.velocity.y > -0.05;
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && !isJumping)
         {
             isJumping = true;
             jumpTimer = jumpInputEnabledTime;
