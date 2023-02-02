@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Walking")]
     [SerializeField] 
     float accelerationSpeed;
-    [SerializeField] 
+    [SerializeField]
     float maxSpeed;
     [SerializeField] 
     float friction;
@@ -48,11 +48,13 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Stuff to export")]
     public static Transform PlayerTransform;
+    public static float ActualMaxSpeed;
 
     // In awake, because other scripts already need player transform in their start method
     private void Awake()
     {
         PlayerTransform = transform;
+        ActualMaxSpeed = maxSpeed;
     }
 
     private void Start()
@@ -125,10 +127,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 finalMovement = new Vector3(movement.x, 0, movement.z);
         rb.AddForce(finalMovement, ForceMode.VelocityChange);
 
-        if (rb.velocity.magnitude > maxSpeed)
+        if (rb.velocity.magnitude > ActualMaxSpeed)
         {
             Vector3 velocity = rb.velocity;
-            Vector3 maxVelocity = new Vector3(velocity.normalized.x * maxSpeed, velocity.y, velocity.normalized.z * maxSpeed);
+            Vector3 maxVelocity = new Vector3(velocity.normalized.x * ActualMaxSpeed, velocity.y, velocity.normalized.z * ActualMaxSpeed);
             velocity = maxVelocity;
             rb.velocity = velocity;
         }
