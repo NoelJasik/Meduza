@@ -39,7 +39,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
     {
         float distanceToPlayer = Vector3.Distance(PlayerMovement.PlayerTransform.position, transform.position);
 
-        if (distanceToPlayer > triggerDistance || distanceToPlayer < attackDistance)
+        if (distanceToPlayer > triggerDistance)
         {
             target = transform.position;
         }
@@ -47,8 +47,27 @@ public abstract class EnemyBehaviour : MonoBehaviour
         {
             target = PlayerMovement.PlayerTransform.position;
         }
+        else if (distanceToPlayer < attackDistance && IsThereAnObstacleOnTheWayToPlayer())
+        {
+            target = PlayerMovement.PlayerTransform.position;
+        }
 
         agent.SetDestination(target);
+    }
+
+    private bool IsThereAnObstacleOnTheWayToPlayer()
+    {
+        Vector3 raycastDirection = PlayerMovement.PlayerTransform.position - transform.position;
+
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, raycastDirection);
+
+        if (hits.Length == 0) return false;
+        if (hits[0].collider.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            return true;
+        }
+
+        return false;
     }
     
     protected abstract void Attack();
