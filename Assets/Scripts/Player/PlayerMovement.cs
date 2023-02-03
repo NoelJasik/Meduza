@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     private float kayooteTimer;
     // Stores current rotation, better for clamping than the previous approach
     float rotX;
-    float rotY = 45f;
+    float rotY;
 
 
 
