@@ -53,6 +53,10 @@ public abstract class EnemyBehaviour : MonoBehaviour
         }
 
         agent.SetDestination(target);
+        Vector3 lookVector = PlayerMovement.PlayerTransform.position - transform.position;
+        lookVector.y = 0;
+        Quaternion rot = Quaternion.LookRotation(lookVector);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
     }
 
     private bool IsThereAnObstacleOnTheWayToPlayer()
