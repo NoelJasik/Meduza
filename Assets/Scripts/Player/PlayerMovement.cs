@@ -43,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
     private bool isTouchingGround;
     private float jumpTimer;
     private float kayooteTimer;
+    // Stores current rotation, better for clamping than the previous approach
+    float rotX;
+    float rotY = 45f;
 
 
 
@@ -88,16 +91,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void CameraMovement()
     {
-        transform.Rotate(0, Input.GetAxis("Mouse X") * Settings.Dpi, 0);
-        cam.transform.Rotate(-Input.GetAxis("Mouse Y") * Settings.Dpi, 0, 0);
-        if (cam.transform.localEulerAngles.x > 60 && cam.transform.localEulerAngles.x < 70)
-        {
-            cam.transform.localEulerAngles = new Vector3(60, 0, 0);
-        }
-        else if (cam.transform.localEulerAngles.x < 300 && cam.transform.localEulerAngles.x > 290)
-        {
-            cam.transform.localEulerAngles = new Vector3(300, 0, 0);
-        }
+        //now for the mouse rotation
+        rotX += Input.GetAxis("Mouse X") * Settings.Dpi * Time.deltaTime;
+        rotY += Input.GetAxis ("Mouse Y") * Settings.Dpi * Time.deltaTime;
+ 
+        rotY = Mathf.Clamp(rotY, -90f, 90f);      
+ 
+        //Camera rotation only allowed if game us not paused
+        cam.transform.rotation = Quaternion.Euler(-rotY, rotX, 0f);
+        transform.rotation = Quaternion.Euler(0f, rotX, 0f);
     }
     
     private void OnDisable()

@@ -12,7 +12,8 @@ public class PlayerHealth : Health
 
     protected override void Death()
     {
-        Respawn();
+        SceneSwitcher.Instance.ReloadScene();
+        //Respawn();
     }
 
     private void Respawn()
