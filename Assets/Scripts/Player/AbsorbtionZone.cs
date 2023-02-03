@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AbsorbtionZone : MonoBehaviour
@@ -10,18 +7,6 @@ public class AbsorbtionZone : MonoBehaviour
 
     [SerializeField] private Transform barrel;
     [SerializeField] private Transform hitPoint;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {

@@ -13,6 +13,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
     private float timeElapsedSinceLastAttack = 0f;
     protected PlayerHealth playerHealth;
     private const float ERROR = 0.1f;
+    private const float turnLerpCoef = 0.01f;
     
     private void Start()
     {
@@ -56,7 +57,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
         Vector3 lookVector = PlayerMovement.PlayerTransform.position - transform.position;
         lookVector.y = 0;
         Quaternion rot = Quaternion.LookRotation(lookVector);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, turnLerpCoef);
     }
 
     private bool IsThereAnObstacleOnTheWayToPlayer()

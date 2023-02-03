@@ -16,16 +16,17 @@ public class Projectile : MonoBehaviour
     Sprite playerProjectileSprite;
     [SerializeField]
     Sprite enemyProjectileSprite;
-    
-    // Projectile layer 
-    // There is a layer for enemies projectiles and for players projectiles
-    // When spawning projectiles you need to pass the correct layer in Initialize()
-    // The layers interaction is in the Project settings -> Physics2D 
-    
+
     void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
+    
+        
+    // Projectile layer 
+    // There is a layer for enemies projectiles and for players projectiles
+    // When spawning projectiles you need to pass the correct layer in Initialize()
+    // The layers interaction is in the Project settings -> Physics2D 
     public void Initialize(Vector3 targetPos, float dmg, float projSpeed, int projectileLayer)
     {
         Direction = (targetPos - transform.position).normalized;
