@@ -5,7 +5,7 @@ using UnityEngine;
 public class Settings : MonoBehaviour
 {
     [Header("Player Settings")] 
-    public static float Dpi = 200;
+    public static float Dpi = 2;
 
     // Start is called before the first frame update
     void Start()

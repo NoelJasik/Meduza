@@ -92,11 +92,11 @@ public class PlayerMovement : MonoBehaviour
     private void CameraMovement()
     {
         //now for the mouse rotation
-        rotX += Input.GetAxis("Mouse X") * Settings.Dpi * Time.deltaTime;
-        rotY += Input.GetAxis ("Mouse Y") * Settings.Dpi * Time.deltaTime;
+        rotX += (Input.GetAxis("Mouse X") * Settings.Dpi);
+        rotY += (Input.GetAxis ("Mouse Y") * Settings.Dpi);
  
-        rotY = Mathf.Clamp(rotY, -90f, 90f);      
- 
+        rotY = Mathf.Clamp(rotY, -90f, 90f);
+
         //Camera rotation only allowed if game us not paused
         cam.transform.rotation = Quaternion.Euler(-rotY, rotX, 0f);
         transform.rotation = Quaternion.Euler(0f, rotX, 0f);
