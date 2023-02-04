@@ -17,5 +17,6 @@ public class FollowPlayer : MonoBehaviour
     {
         
         transform.localPosition = PlayerMovement.PlayerTransform.localPosition + offset;
+        transform.localPosition = new Vector3(transform.localPosition.x, Mathf.Clamp(transform.localPosition.y, -9, 1000), transform.localPosition.z);
     }
 }

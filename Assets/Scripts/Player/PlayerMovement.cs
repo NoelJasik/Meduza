@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("References")]
     private Rigidbody rb;
     private GameObject cam;
+    [SerializeField] private GameObject swordPositioner;
     [Header("Private Variables")] 
     private bool isJumping;
     private bool isButtonUp;
@@ -110,6 +111,7 @@ public class PlayerMovement : MonoBehaviour
 
         //Camera rotation only allowed if game us not paused
         cam.transform.rotation = Quaternion.Euler(-rotY, rotX, 0f);
+        swordPositioner.transform.localRotation = Quaternion.Euler(-rotY, 0f, 0f);
         transform.rotation = Quaternion.Euler(0f, rotX, 0f);
     }
     
