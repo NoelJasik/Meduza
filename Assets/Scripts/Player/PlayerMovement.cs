@@ -97,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //now for the mouse rotation
         rotX += (Input.GetAxis("Mouse X") * Settings.Dpi);
-        rotY += (Input.GetAxis ("Mouse Y") * Settings.Dpi);
+        rotY += (Input.GetAxis("Mouse Y") * Settings.Dpi);
  
         rotY = Mathf.Clamp(rotY, -90f, 90f);
 
