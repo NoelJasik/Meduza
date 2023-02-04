@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +8,9 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField]
     private Animator transition;
 
+    [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip gameMusic;
+    [SerializeField] private AudioClip[] shingSounds;
     
     void Awake()
     {
@@ -19,7 +19,19 @@ public class SceneSwitcher : MonoBehaviour
 
     private void Start()
     {
-        SoundManager.Instance.PlayMusic(gameMusic);
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            SoundManager.Instance.PlayMusic(menuMusic);
+        }
+        else
+        {
+            SoundManager.Instance.PlayMusic(gameMusic);
+        }
+    }
+
+    public void OnButtonClickedSound()
+    {
+        SoundManager.Instance.PlayRandom(shingSounds);
     }
 
     public void LoadScene(int sceneIndex)

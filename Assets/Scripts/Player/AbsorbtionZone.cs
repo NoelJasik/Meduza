@@ -12,7 +12,8 @@ public class AbsorbtionZone : MonoBehaviour
     [SerializeField] private AudioClip[] swordFleshImpactSounds;
     [SerializeField] private AudioClip[] swordStoneImpactSounds;
     [SerializeField] private AudioClip[] parrySounds;
-    [SerializeField] private AudioClip[] parryBlockedSounds;
+    [SerializeField] private AudioClip[] sizzleSounds;
+    [SerializeField] private AudioSource playerSizzleBackgroundSource;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -41,7 +42,8 @@ public class AbsorbtionZone : MonoBehaviour
 
         if (PlayerCombat.IsBlocking)
         {
-            SoundManager.Instance.PlayRandom(parryBlockedSounds);
+            SoundManager.Instance.PlayRandom(sizzleSounds);
+            playerSizzleBackgroundSource.Play();
             PlayerCombat.IsHoldingProjectile = true;
         }
         

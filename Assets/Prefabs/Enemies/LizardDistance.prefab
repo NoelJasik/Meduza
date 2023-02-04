@@ -280,6 +280,12 @@ MonoBehaviour:
     type: 3}
   shootPoint: {fileID: 6601464992448483576}
   projectileSpeed: 14
+  roarSounds:
+  - {fileID: 8300000, guid: 6bebba20462794623be2a733e78edb3a, type: 3}
+  - {fileID: 8300000, guid: c93861f2945a24e77b609faece2a8997, type: 3}
+  - {fileID: 8300000, guid: 668782044e21c435b9fbff3cb3508e6a, type: 3}
+  - {fileID: 8300000, guid: 7accef197217745278cfb49e90f23970, type: 3}
+  - {fileID: 8300000, guid: f717a5546ca3c4ce888099a97853d965, type: 3}
 --- !u!1 &6601464992299428816
 GameObject:
   m_ObjectHideFlags: 0

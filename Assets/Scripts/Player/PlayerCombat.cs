@@ -39,6 +39,8 @@ public class PlayerCombat : MonoBehaviour
     public static float ActualSwingDamage;
     public static float ActualReflectDamage;
     public static float ActualProjectileDeflectSpeed;
+    
+    private AudioSource playerSizzleBackgroundSource;
 
     private void Awake()
     {
@@ -47,14 +49,13 @@ public class PlayerCombat : MonoBehaviour
         ActualProjectileDeflectSpeed = projectileDeflectSpeed;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         playerBaseSpeed = PlayerMovement.ActualMaxSpeed;
         projectileHoldTimer = projectileHoldTime;
+        playerSizzleBackgroundSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Swing();
@@ -75,6 +76,7 @@ public class PlayerCombat : MonoBehaviour
                 GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
                 projectile.GetComponent<Projectile>().Initialize(hitPoint.position, holdedProjectileDamage , holdedProjectileSpeed, LayerMask.NameToLayer("PlayerProjectile"));
                 IsHoldingProjectile = false;
+                playerSizzleBackgroundSource.Stop();
                 projectileHoldTimer = projectileHoldTime;
             }
         }
@@ -109,6 +111,7 @@ public class PlayerCombat : MonoBehaviour
             projectileHoldTimer -= Time.deltaTime;
             if (projectileHoldTimer < 0)
             {
+                playerSizzleBackgroundSource.Stop();
                 IsHoldingProjectile = false;
                 projectileHoldTimer = projectileHoldTime;
             }
