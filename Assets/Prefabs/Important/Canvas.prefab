@@ -882,7 +882,7 @@ PrefabInstance:
     - target: {fileID: 8770651847845713653, guid: ff9e59044f5ab6541970f459169554ff,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -268.65823
+      value: -82.771
       objectReference: {fileID: 0}
     - target: {fileID: 8770651847845713653, guid: ff9e59044f5ab6541970f459169554ff,
         type: 3}
@@ -942,7 +942,7 @@ PrefabInstance:
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
@@ -952,7 +952,7 @@ PrefabInstance:
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
@@ -962,7 +962,7 @@ PrefabInstance:
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 82.76999
+      value: 82.77002
       objectReference: {fileID: 0}
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
@@ -1002,12 +1002,12 @@ PrefabInstance:
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.000030518
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 383.78702
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1178350672169333219, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
@@ -1054,6 +1054,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9055770099774745727, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9055770100129769829, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1092,7 +1097,7 @@ PrefabInstance:
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
@@ -1102,7 +1107,7 @@ PrefabInstance:
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
@@ -1112,7 +1117,7 @@ PrefabInstance:
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 10.9115
+      value: 10.911499
       objectReference: {fileID: 0}
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
@@ -1152,12 +1157,12 @@ PrefabInstance:
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0010469
+      value: 0.00093467
       objectReference: {fileID: 0}
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 445.3428
+      value: 46.841
       objectReference: {fileID: 0}
     - target: {fileID: 9055770101083337975, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
