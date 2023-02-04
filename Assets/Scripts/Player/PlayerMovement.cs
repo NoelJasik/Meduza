@@ -70,14 +70,21 @@ public class PlayerMovement : MonoBehaviour
         {
             cam = Camera.main.gameObject;
         }
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
     {
         elapsedSinceLastStep += Time.deltaTime;
         CanJump();
-        CameraMovement();
+        if (Time.timeScale > 0)
+        {
+            CameraMovement();
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
     private void FixedUpdate()
     {

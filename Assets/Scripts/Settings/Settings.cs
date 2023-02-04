@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,10 @@ public class Settings : MonoBehaviour
     private Slider dpiSlider;
     [SerializeField]
     private TMP_Dropdown graphicsDropdown;
+    [SerializeField]
+    private GameObject pauseScreen;
+    bool isThereAPauseScreen = false;
+    private bool paused;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +25,20 @@ public class Settings : MonoBehaviour
             dpiSlider.value = Dpi;
         if(graphicsDropdown != null)
             graphicsDropdown.value = QualitySettings.GetQualityLevel();
+        if (pauseScreen != null)
+        {
+            isThereAPauseScreen = true;
+            pauseScreen.SetActive(false);
+            paused = false;
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Pause();
+        }
     }
 
     public static void SetDpi(float dpi)
@@ -31,6 +50,18 @@ public class Settings : MonoBehaviour
     {
         QualitySettings.SetQualityLevel(graphicsDropdown.value);
     }
+    
+    public void Pause()
+    {
+        if (isThereAPauseScreen)
+        {
+            paused = !paused;
+            pauseScreen.SetActive(paused);
+            Time.timeScale = paused ? 0 : 1;
+        }
+    }
+    
+    
     
     
 }
