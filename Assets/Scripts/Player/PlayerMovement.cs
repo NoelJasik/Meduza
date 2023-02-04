@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -52,6 +49,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Stuff to export")]
     public static Transform PlayerTransform;
     public static float ActualMaxSpeed;
+    
+    [Header("Sounds")]
+    [SerializeField] private AudioClip[] jumpGruntSounds;
+    [SerializeField] private AudioClip[] stepSounds;
+    [SerializeField] private float stepSoundDelay;
+    private float elapsedSinceLastStep = 0f;
 
     // In awake, because other scripts already need player transform in their start method
     private void Awake()
@@ -72,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        elapsedSinceLastStep += Time.deltaTime;
         CanJump();
         CameraMovement();
     }
@@ -86,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         Jump();
 
     }
-    
+
     // Camera
 
     private void CameraMovement()
@@ -120,6 +124,15 @@ public class PlayerMovement : MonoBehaviour
     {
         float inputVertical = Input.GetAxisRaw("Vertical");
         float inputHorizontal = Input.GetAxisRaw("Horizontal");
+
+        if (inputHorizontal != 0 || inputVertical != 0)
+        {
+            if (elapsedSinceLastStep > stepSoundDelay && isTouchingGround)
+            {
+                SoundManager.Instance.PlayRandom(stepSounds);
+                elapsedSinceLastStep = 0f;
+            }
+        }
 
         Vector3 movement = new Vector3(inputHorizontal, 0, inputVertical);
         movement = transform.TransformDirection(movement);
@@ -177,6 +190,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(jumpForce * transform.up);
             kayooteTimer = 0;
             isJumping = false;
+            SoundManager.Instance.PlayRandom(jumpGruntSounds);
         }
 
         if (!isButtonUp) return;

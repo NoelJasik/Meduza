@@ -5,6 +5,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] protected float maxHitPoints;
     [SerializeField] private AudioClip[] hurtSounds;
+    [SerializeField] private AudioClip[] deathSounds;
 
     protected float currentHitPoints;
     protected virtual void Start()
@@ -34,6 +35,6 @@ public class Health : MonoBehaviour
 
     protected virtual void Death()
     {
-        
+        SoundManager.Instance.PlayRandom(deathSounds);
     }
 }

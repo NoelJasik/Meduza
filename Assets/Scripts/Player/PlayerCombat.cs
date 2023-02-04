@@ -40,7 +40,6 @@ public class PlayerCombat : MonoBehaviour
     public static float ActualReflectDamage;
     public static float ActualProjectileDeflectSpeed;
 
-
     private void Awake()
     {
         ActualSwingDamage = swingDamage;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-
     public static SceneSwitcher Instance;
     [SerializeField]
     private Animator transition;
-    // Start is called before the first frame update
+
+    [SerializeField] private AudioClip gameMusic;
+    
     void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        SoundManager.Instance.PlayMusic(gameMusic);
     }
 
     public void LoadScene(int sceneIndex)

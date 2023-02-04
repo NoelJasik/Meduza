@@ -630,6 +630,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aebd114b7b8c84e07a32c3a0bc04cac3, type: 3}
   - {fileID: 8300000, guid: 51d7acccf45274883aa263aa05d9be69, type: 3}
   - {fileID: 8300000, guid: 1f716e8af2b394f7da9a37defee037cb, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: c09aa954e4bd043edbffbfa0c7535bd7, type: 3}
+  - {fileID: 8300000, guid: 7c620240fad024e21840dde6c95070a5, type: 3}
+  - {fileID: 8300000, guid: e82a65c8c797b43b2af257c486b53cb8, type: 3}
 --- !u!114 &608925599
 MonoBehaviour:
   m_ObjectHideFlags: 0

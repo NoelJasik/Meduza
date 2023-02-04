@@ -15,6 +15,14 @@ public class SoundManager : MonoBehaviour
         }
         Instance = this;
     }
+    
+    public void PlayMusic(AudioClip clip)
+    {
+        AudioSource newSource = Instantiate(audioSourcePrefab, transform).GetComponent<AudioSource>();
+        newSource.clip = clip;
+        newSource.loop = true;
+        newSource.Play();
+    }
 
     public void PlaySound(AudioClip clip)
     {
