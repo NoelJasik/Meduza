@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
     public Vector3 Direction { get; set; }
     private float damage;
     private float speed;
+    [SerializeField]
+    private int penetrationForce = 1;
     
     private Health targetHealth;
     private Mirror targetMirror;
@@ -67,11 +69,27 @@ public class Projectile : MonoBehaviour
         {
             return;
         }
+        if(spriteRenderer.sprite == enemyProjectileSprite)
+        {
+            DestroyBullet(true);
+        }
+        if(col.gameObject.layer == LayerMask.NameToLayer("Wall") || col.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        {
+            DestroyBullet(true);
+        }
         DestroyBullet();
     }
     
-    public void DestroyBullet()
+    public void DestroyBullet(bool ignorePenetration = false)
     {
-        Destroy(gameObject);
+        penetrationForce--;
+        if (ignorePenetration)
+        {
+            Destroy(gameObject);
+        }
+        if (penetrationForce <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
