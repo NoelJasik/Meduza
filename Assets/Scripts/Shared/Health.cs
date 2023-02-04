@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -11,6 +12,15 @@ public class Health : MonoBehaviour
     protected virtual void Start()
     {
         currentHitPoints = maxHitPoints;
+    }
+
+    public void Update()
+    {
+        if (transform.position.y < -10)
+        {
+            Death();
+        }
+        
     }
 
     public virtual void ReceiveDamage(float dmg)

@@ -23,7 +23,7 @@ public class AbsorbtionZone : MonoBehaviour
             other.GetComponent<Health>().ReceiveDamage(PlayerCombat.ActualSwingDamage);
             SoundManager.Instance.PlayRandom(swordFleshImpactSounds);
         }
-        else if (other.CompareTag("Wall") || other.CompareTag("Ground"))
+        else if ((other.CompareTag("Wall") || other.CompareTag("Ground")) && PlayerCombat.IsSwinging)
         {
             SoundManager.Instance.PlayRandom(swordStoneImpactSounds);
         }

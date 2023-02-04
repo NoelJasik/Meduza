@@ -65,12 +65,12 @@ public class PlayerCombat : MonoBehaviour
 
     void Swing()
     {
-        if (Input.GetButtonDown("Fire1") && swingCooldownTimer < 0 && !IsSwinging && !IsBlocking)
+        if (Input.GetButton("Fire1") && swingCooldownTimer < 0 && swingDurationTimer < 0 && !IsSwinging && !IsBlocking)
         {
-            anim.Play("Slice");
-            IsSwinging = true;
             swingDurationTimer = swingTime;
             swingCooldownTimer = swingCooldown;
+            anim.Play("Slice");
+            IsSwinging = true;
             if (IsHoldingProjectile)
             {
                 GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
