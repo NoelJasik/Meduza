@@ -15,7 +15,7 @@ public class DistanceEnemyBehaviour : EnemyBehaviour
 
     protected void SpawnProjectile()
     {
-        SoundManager.Instance.PlayRandom(roarSounds, 1f, true);
+        SoundManager.Instance.PlayRandom(roarSounds, 1f, true, transform);
         GameObject projectile = Instantiate(projectilePrefab, shootPoint.position, Quaternion.identity);
         projectile.GetComponent<Projectile>().Initialize(PlayerMovement.PlayerTransform.position, 
             damage, projectileSpeed, LayerMask.NameToLayer("EnemyProjectile"));

@@ -24,9 +24,13 @@ public class SoundManager : MonoBehaviour
         newSource.Play();
     }
 
-    public void PlaySound(AudioClip clip, float volume = 1f, bool is3DSound = false)
+    public void PlaySound(AudioClip clip, float volume = 1f, bool is3DSound = false, Transform whereToPlay = null)
     {
-        AudioSource newSource = Instantiate(audioSourcePrefab, transform).GetComponent<AudioSource>();
+        if (whereToPlay == null)
+        {
+            whereToPlay = transform;
+        }
+        AudioSource newSource = Instantiate(audioSourcePrefab, whereToPlay.position, whereToPlay.rotation).GetComponent<AudioSource>();
         if(is3DSound)
             newSource.spatialBlend = 1f;
         else
@@ -37,9 +41,9 @@ public class SoundManager : MonoBehaviour
         Destroy(newSource.gameObject, clip.length);
     }
 
-    public void PlayRandom(AudioClip[] clips, float volume = 1f, bool is3DSound = false)
+    public void PlayRandom(AudioClip[] clips, float volume = 1f, bool is3DSound = false, Transform whereToPlay = null)
     {
         int rand = Random.Range(0, clips.Length);
-        PlaySound(clips[rand], volume, is3DSound);
+        PlaySound(clips[rand], volume, is3DSound, whereToPlay);
     }
 }
