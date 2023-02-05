@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
     private void Friction()
     {
         Vector3 velocity = rb.velocity;
-        Vector3 frictionForce = new Vector3(-velocity.x * friction, 0, -velocity.z * friction);
+        Vector3 frictionForce = new Vector3(-velocity.x * friction, 0f, -velocity.z * friction);
         rb.AddForce(frictionForce);
     }
 

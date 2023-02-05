@@ -25,6 +25,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
       //  Invoke("BeginThinking", 0.1f);
       //  transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
       animator = GetComponent<Animator>();
+      if(animator != null)
       animator.SetFloat("Speed", 1f);
     }
 
@@ -71,17 +72,20 @@ public abstract class EnemyBehaviour : MonoBehaviour
         if (distanceToPlayer > triggerDistance)
         {
             target = transform.position;
-            animator.SetFloat("Speed", 0f);
+            if(animator != null)
+                animator.SetFloat("Speed", 0f);
         }
         else if (distanceToPlayer > attackDistance)
         {
             target = PlayerMovement.PlayerTransform.position;
-            animator.SetFloat("Speed", 1f);
+            if(animator != null)
+                animator.SetFloat("Speed", 1f);
         }
         else if (distanceToPlayer < attackDistance && IsThereAnObstacleOnTheWayToPlayer())
         {
             target = PlayerMovement.PlayerTransform.position;
-            animator.SetFloat("Speed", 1f);
+            if(animator != null)
+                animator.SetFloat("Speed", 1f);
         }
 
         agent.SetDestination(target);
@@ -109,7 +113,8 @@ public abstract class EnemyBehaviour : MonoBehaviour
 
     private void AttackContainer()
     {
-        animator.SetTrigger("Attack");
+        if(animator != null)
+            animator.SetTrigger("Attack");
         Attack();
     }
     
