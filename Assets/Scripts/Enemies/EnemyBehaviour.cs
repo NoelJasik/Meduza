@@ -24,7 +24,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
         playerHealth = PlayerMovement.PlayerTransform.GetComponent<PlayerHealth>();
         Invoke("BeginThinking", 1.5f);
         transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
-        animator = GetComponentInChildren<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     void BeginThinking()

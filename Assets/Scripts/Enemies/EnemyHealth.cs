@@ -11,6 +11,7 @@ public class EnemyHealth : Health
         gameObject.GetComponent<EnemyBehaviour>().enabled = false;
         gameObject.GetComponent<NavMeshAgent>().enabled = false;
         gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        gameObject.GetComponent<CapsuleCollider>().radius /= 2f;
         gameObject.layer = LayerMask.NameToLayer("Wall");
         gameObject.tag = "Wall";
         this.enabled = false;
