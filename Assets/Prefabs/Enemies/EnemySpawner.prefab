@@ -1742,7 +1742,7 @@ MonoBehaviour:
   - {fileID: 7881059725405976894, guid: 5d29cf590785d443d953adde09a949eb, type: 3}
   - {fileID: 6706834761274030839, guid: e3392e6f63a4b4b7d80ac0e1563a483b, type: 3}
   whichEnemy: 1
-  spawnDelay: 1
+  spawnDelay: 2
   killedEnemiesToSpawn: 0
 --- !u!1 &6630010720778903444
 GameObject:
