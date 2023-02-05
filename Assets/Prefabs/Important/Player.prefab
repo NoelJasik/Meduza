@@ -768,7 +768,7 @@ MonoBehaviour:
   inputErrorRoom: 0.1
   swingDamage: 5
   reflectDamage: 20
-  swingCooldown: 0.5
+  swingCooldown: 0.4
   swingTime: 0.15
   projectileDeflectSpeed: 40
   blockCooldown: 0.05
