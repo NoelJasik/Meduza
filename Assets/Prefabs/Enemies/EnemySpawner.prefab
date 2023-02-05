@@ -1738,7 +1738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefabs:
-  - {fileID: 6111764627682202225, guid: f9f0ab5e985ef4a519823444493ba5bb, type: 3}
+  - {fileID: 1198568380244467465, guid: 985c620e035a0482084bb876646b01e5, type: 3}
   - {fileID: 7881059725405976894, guid: 5d29cf590785d443d953adde09a949eb, type: 3}
   - {fileID: 5524547847124300284, guid: 26ba6cf7723e74436b7d77f6066f1fea, type: 3}
   whichEnemy: 1

@@ -26,17 +26,16 @@ public class Health : MonoBehaviour
 
     public virtual void ReceiveDamage(float dmg)
     {
-        print(gameObject.name + " received " + dmg + " damage");
-        SoundManager.Instance.PlayRandom(hurtSounds);
         currentHitPoints -= dmg;
         if (currentHitPoints <= 0)
         {
             Death();
+            return;
         }
-
-        //Doesnt work with models now
+        
+        SoundManager.Instance.PlayRandom(hurtSounds);
         if(thingToFlash != null)
-        StartCoroutine(flash());
+            StartCoroutine(flash());
     }
 
     IEnumerator flash()
