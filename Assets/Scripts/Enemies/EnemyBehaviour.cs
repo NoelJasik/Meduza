@@ -43,6 +43,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
     
     private void Update()
     {
+        isThinking = PlayerMovement.HasMoved;
 
         if (!isThinking)
         {

@@ -49,6 +49,8 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Stuff to export")]
     public static Transform PlayerTransform;
+
+    public static bool HasMoved = false;
     public static float ActualMaxSpeed;
     
     [Header("Sounds")]
@@ -66,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        HasMoved = false;
         rb = GetComponent<Rigidbody>();
         if (Camera.main != null)
         {
@@ -139,6 +142,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (inputHorizontal != 0 || inputVertical != 0)
         {
+            HasMoved = true;
             if (elapsedSinceLastStep > stepSoundDelay && isTouchingGround)
             {
                 SoundManager.Instance.PlayRandom(stepSounds);

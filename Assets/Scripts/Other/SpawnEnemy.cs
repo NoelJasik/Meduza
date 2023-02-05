@@ -13,7 +13,7 @@ public class SpawnEnemy : MonoBehaviour
 
     // Update is called once per frame
     void Update() {
-        if (EnemyCounter.MaxEnemyCount - EnemyCounter.EnemyCount >= killedEnemiesToSpawn)
+        if (EnemyCounter.MaxEnemyCount - EnemyCounter.EnemyCount >= killedEnemiesToSpawn && PlayerMovement.HasMoved)
         {
             Invoke("Spawning", spawnDelay);
         }
