@@ -3539,6 +3539,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5032913668221742046, guid: 95b5ba1829b0752c59aa56d8bd06e8af,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -456.60614
+      objectReference: {fileID: 0}
     - target: {fileID: 5032913668221742047, guid: 95b5ba1829b0752c59aa56d8bd06e8af,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
