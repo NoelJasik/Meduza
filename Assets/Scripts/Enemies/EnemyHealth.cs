@@ -7,6 +7,8 @@ public class EnemyHealth : Health
     
     protected override void Death()
     {
+        if(gameObject.GetComponent<EnemyBehaviour>().enabled == false)
+            return;
         Animator animator = GetComponentInChildren<Animator>();
         SoundManager.Instance.PlaySound(petrifySound, 1f, false, transform);
         if(animator != null)
