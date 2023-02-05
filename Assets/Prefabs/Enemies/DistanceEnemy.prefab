@@ -2373,9 +2373,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerDistance: 50
-  attackDistance: 15
+  attackDistance: 50
   rechargeTime: 1
   damage: 1
+  attackVarience: 0.5
   projectilePrefab: {fileID: 8320802165472883533, guid: 98bb07dd8ca054d5aada19c8f685315b,
     type: 3}
   shootPoint: {fileID: 7034147358682587546}
