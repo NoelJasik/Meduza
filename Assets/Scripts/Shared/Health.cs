@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     [SerializeField] protected float maxHitPoints;
     [SerializeField] private AudioClip[] hurtSounds;
     [SerializeField] private AudioClip[] deathSounds;
+    [SerializeField] private GameObject thingToFlash;
 
     protected float currentHitPoints;
     protected virtual void Start()
@@ -34,14 +35,15 @@ public class Health : MonoBehaviour
         }
 
         //Doesnt work with models now
-        //StartCoroutine(flash());
+        if(thingToFlash != null)
+        StartCoroutine(flash());
     }
 
     IEnumerator flash()
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        thingToFlash.SetActive(false);
         yield return new WaitForSeconds(0.1f);
-        gameObject.GetComponent<MeshRenderer>().enabled = true;
+        thingToFlash.SetActive(true);
     }
 
     protected virtual void Death()
