@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AbsorbtionZone : MonoBehaviour
@@ -14,6 +15,15 @@ public class AbsorbtionZone : MonoBehaviour
     [SerializeField] private AudioClip[] parrySounds;
     [SerializeField] private AudioClip[] sizzleSounds;
     [SerializeField] private AudioSource playerSizzleBackgroundSource;
+    [SerializeField] private AudioClip[] swordSwingSounds;
+
+    bool hasWallHitPlayed = false;
+    
+    private void Start()
+    {
+       hasWallHitPlayed = false;
+       SoundManager.Instance.PlayRandom(swordSwingSounds);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,12 +33,13 @@ public class AbsorbtionZone : MonoBehaviour
             other.GetComponent<Health>().ReceiveDamage(PlayerCombat.ActualSwingDamage);
             SoundManager.Instance.PlayRandom(swordFleshImpactSounds);
         }
-        else if ((other.CompareTag("Wall") || other.CompareTag("Ground")) && PlayerCombat.IsSwinging)
+        else if ((other.CompareTag("Wall") || other.CompareTag("Ground")) && PlayerCombat.IsSwinging && !hasWallHitPlayed)
         {
             SoundManager.Instance.PlayRandom(swordStoneImpactSounds);
+            hasWallHitPlayed = true;
         }
 
-        if (other.tag != "Projectile") 
+        if (!other.CompareTag("Projectile")) 
         {
            return;
         }

@@ -71,6 +71,9 @@ public class PlayerMovement : MonoBehaviour
         {
             cam = Camera.main.gameObject;
         }
+
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
