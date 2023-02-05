@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
     private float jumpTimer;
     private float kayooteTimer;
     // Stores current rotation, better for clamping than the previous approach
-    float rotX;
+    [SerializeField] float rotX;
     float rotY;
 
 

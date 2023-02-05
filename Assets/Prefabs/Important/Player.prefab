@@ -501,7 +501,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!4 &9125233514164790861
 Transform:
@@ -716,6 +716,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 3072
   swordPositioner: {fileID: 122538833}
+  rotY: 0
   jumpGruntSounds:
   - {fileID: 8300000, guid: b5d620a9516834fe4b5c0bbb5306cd6f, type: 3}
   - {fileID: 8300000, guid: 07db7ca0492b142af9ec1d0f4ffca76e, type: 3}

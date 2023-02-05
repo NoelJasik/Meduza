@@ -6,6 +6,7 @@ public class EnemyHealth : Health
     protected override void Death()
     {
         Animator animator = GetComponentInChildren<Animator>();
+        if(animator != null)
         animator.SetTrigger("Petrify");
         EnemyCounter.EnemyCount--;
         gameObject.GetComponent<EnemyBehaviour>().enabled = false;
