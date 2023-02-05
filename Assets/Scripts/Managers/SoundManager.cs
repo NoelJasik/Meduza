@@ -1,10 +1,16 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance { get; private set; }
 
     [SerializeField] private GameObject audioSourcePrefab;
+    
+    private GameObject _musicSource;
+    
+    public static String CurrentTrack;
     
     private void Awake()
     {
@@ -13,15 +19,20 @@ public class SoundManager : MonoBehaviour
             Destroy(this);
             return;
         }
+        DontDestroyOnLoad(gameObject);
         Instance = this;
     }
     
     public void PlayMusic(AudioClip clip)
     {
+        CurrentTrack = clip.name;
+        if(_musicSource != null)
+            Destroy(_musicSource);
         AudioSource newSource = Instantiate(audioSourcePrefab, transform).GetComponent<AudioSource>();
         newSource.clip = clip;
         newSource.loop = true;
         newSource.Play();
+        _musicSource = newSource.gameObject;
     }
 
     public void PlaySound(AudioClip clip, float volume = 1f, bool is3DSound = false, Transform whereToPlay = null)

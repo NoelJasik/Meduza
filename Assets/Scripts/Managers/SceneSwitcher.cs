@@ -23,7 +23,7 @@ public class SceneSwitcher : MonoBehaviour
         {
             SoundManager.Instance.PlayMusic(menuMusic);
         }
-        else
+        else if(SoundManager.CurrentTrack != gameMusic.name)
         {
             SoundManager.Instance.PlayMusic(gameMusic);
         }
