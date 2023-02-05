@@ -25,6 +25,8 @@ public abstract class EnemyBehaviour : MonoBehaviour
       //  Invoke("BeginThinking", 0.1f);
       //  transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
       animator = GetComponent<Animator>();
+      if(animator != null)
+      animator.SetFloat("Speed", 1f);
     }
 
     void BeginThinking()
@@ -70,15 +72,26 @@ public abstract class EnemyBehaviour : MonoBehaviour
         if (distanceToPlayer > triggerDistance)
         {
             target = transform.position;
+<<<<<<< HEAD
             //animator.SetFloat("Speed", 0f);
+=======
+            if(animator != null)
+                animator.SetFloat("Speed", 0f);
+>>>>>>> 3dd2256ff540868bfbe626330e5ec9316c3453d3
         }
         else if (distanceToPlayer > attackDistance)
         {
             target = PlayerMovement.PlayerTransform.position;
+<<<<<<< HEAD
             //animator.SetFloat("Speed", 1f);
+=======
+            if(animator != null)
+                animator.SetFloat("Speed", 1f);
+>>>>>>> 3dd2256ff540868bfbe626330e5ec9316c3453d3
         }
         else
         {
+<<<<<<< HEAD
             if (IsThereAnObstacleOnTheWayToPlayer())
             {
                 target = PlayerMovement.PlayerTransform.position;
@@ -89,6 +102,11 @@ public abstract class EnemyBehaviour : MonoBehaviour
                 target = transform.position;
                 //animator.SetFloat("Speed", 0f);
             }
+=======
+            target = PlayerMovement.PlayerTransform.position;
+            if(animator != null)
+                animator.SetFloat("Speed", 1f);
+>>>>>>> 3dd2256ff540868bfbe626330e5ec9316c3453d3
         }
 
         agent.SetDestination(target);
@@ -117,7 +135,12 @@ public abstract class EnemyBehaviour : MonoBehaviour
 
     private void AttackContainer()
     {
+<<<<<<< HEAD
         //animator.SetTrigger("Attack");
+=======
+        if(animator != null)
+            animator.SetTrigger("Attack");
+>>>>>>> 3dd2256ff540868bfbe626330e5ec9316c3453d3
         Attack();
     }
     

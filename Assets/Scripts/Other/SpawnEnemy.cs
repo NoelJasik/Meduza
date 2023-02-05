@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +9,12 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] private int whichEnemy = 0;
     [SerializeField] private float spawnDelay = 1f;
     [SerializeField] private int killedEnemiesToSpawn = 0;
-    
-    
+
+
+    private void Awake()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update() {
