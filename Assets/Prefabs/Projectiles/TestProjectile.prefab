@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10ddd4a123a497eb2ae75d146c14c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  penetrationForce: 3
+  penetrationForce: 10
   playerProjectileSprite: {fileID: 21300000, guid: 0a6b696d642f46880aa9543326dc7586,
     type: 3}
   enemyProjectileSprite: {fileID: 21300000, guid: 9430c475837a0097daf42bb030cc6d32,

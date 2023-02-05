@@ -1694,7 +1694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerDistance: 50
-  attackDistance: 3
+  attackDistance: 1.5
   rechargeTime: 1
   damage: 1
   attackVarience: 0
