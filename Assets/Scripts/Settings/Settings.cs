@@ -61,7 +61,18 @@ public class Settings : MonoBehaviour
         }
     }
     
+    public void SetActiveWithDelay(GameObject thingToActivate)
+    {
+        StartCoroutine(ActivateWithDelay(thingToActivate, 1f, !thingToActivate.activeSelf));
+    }
     
-    
-    
+    IEnumerator ActivateWithDelay(GameObject thingToActivate, float delay, bool active)
+    {
+        yield return new WaitForSeconds(delay);
+        thingToActivate.SetActive(active);
+    }
+
+
+
+
 }
