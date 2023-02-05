@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ffed1f51d07427094781f6980d6714a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: 28
+  triggerDistance: 50
   attackDistance: 15
   rechargeTime: 1
   damage: 1
