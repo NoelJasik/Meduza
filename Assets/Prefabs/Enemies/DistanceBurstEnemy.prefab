@@ -1922,6 +1922,7 @@ MonoBehaviour:
   deathSounds:
   - {fileID: 8300000, guid: b6df1126650a949809dae86188d0b3f2, type: 3}
   - {fileID: 8300000, guid: a0872f2dff73242e4ab4a33bd5a95729, type: 3}
+  petrifySound: {fileID: 8300000, guid: 66d290b87713f4d358290a640578596c, type: 3}
 --- !u!114 &6221905415992157106
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -44,6 +44,7 @@ public class PlayerCombat : MonoBehaviour
     public static float ActualProjectileDeflectSpeed;
     
     private AudioSource playerSizzleBackgroundSource;
+    [SerializeField] private GameObject particlesForSwordSizzle;
 
     private void Awake()
     {
@@ -85,6 +86,7 @@ public class PlayerCombat : MonoBehaviour
                 projectile.GetComponent<Projectile>().Initialize(hitPoint.position, holdedProjectileDamage , holdedProjectileSpeed, LayerMask.NameToLayer("PlayerProjectile"));
                 IsHoldingProjectile = false;
                 playerSizzleBackgroundSource.Stop();
+                particlesForSwordSizzle.SetActive(false);
                 projectileHoldTimer = projectileHoldTime;
             }
         }
@@ -120,6 +122,7 @@ public class PlayerCombat : MonoBehaviour
             if (projectileHoldTimer < 0)
             {
                 playerSizzleBackgroundSource.Stop();
+                particlesForSwordSizzle.SetActive(false);
                 IsHoldingProjectile = false;
                 projectileHoldTimer = projectileHoldTime;
             }

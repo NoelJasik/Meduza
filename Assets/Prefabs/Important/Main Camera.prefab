@@ -496,6 +496,10 @@ MonoBehaviour:
     type: 3}
   barrel: {fileID: 2225480293734122734}
   hitPoint: {fileID: 8895076230796112515}
+  sword: {fileID: 0}
+  particlesForSwordBlockPrefab: {fileID: 4563368278826813044, guid: 62ce40889e66547c9a26c29f63a3c65a,
+    type: 3}
+  particlesForSwordSizzle: {fileID: 0}
   swordFleshImpactSounds:
   - {fileID: 8300000, guid: 04f184af43dd748e3b4bcbd8d0d3a711, type: 3}
   - {fileID: 8300000, guid: 8af7a1e6d79b64839b56760dade9a26a, type: 3}
@@ -515,6 +519,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 690cd575365134587bda6adcf286be10, type: 3}
   - {fileID: 8300000, guid: e100f454cde924ee9bcc6db916529252, type: 3}
   playerSizzleBackgroundSource: {fileID: 0}
+  swordSwingSounds: []
 --- !u!1 &8895076230796112516
 GameObject:
   m_ObjectHideFlags: 0

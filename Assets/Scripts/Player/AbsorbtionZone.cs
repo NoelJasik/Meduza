@@ -9,6 +9,9 @@ public class AbsorbtionZone : MonoBehaviour
 
     [SerializeField] private Transform barrel;
     [SerializeField] private Transform hitPoint;
+    [SerializeField] private Transform sword;
+    [SerializeField] private GameObject particlesForSwordBlockPrefab;
+    [SerializeField] private GameObject particlesForSwordSizzle;
     
     [Header("Sounds")]
     [SerializeField] private AudioClip[] swordFleshImpactSounds;
@@ -48,6 +51,7 @@ public class AbsorbtionZone : MonoBehaviour
 
         if (PlayerCombat.IsSwinging && other.gameObject.layer == LayerMask.NameToLayer("EnemyProjectile"))
         {
+            Instantiate(particlesForSwordBlockPrefab, sword.position, Quaternion.identity);
             SoundManager.Instance.PlayRandom(parrySounds);
             GameObject projectile = Instantiate(projectilePrefab, barrel.position, barrel.rotation);
             projectile.GetComponent<Projectile>().Initialize(hitPoint.position, PlayerCombat.ActualReflectDamage , PlayerCombat.ActualProjectileDeflectSpeed, LayerMask.NameToLayer("PlayerProjectile"));
@@ -55,6 +59,7 @@ public class AbsorbtionZone : MonoBehaviour
 
         if (PlayerCombat.IsBlocking)
         {
+            particlesForSwordSizzle.SetActive(true);
             SoundManager.Instance.PlayRandom(sizzleSounds);
             playerSizzleBackgroundSource.Play();
             PlayerCombat.IsHoldingProjectile = true;

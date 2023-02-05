@@ -3,9 +3,12 @@ using UnityEngine.AI;
 
 public class EnemyHealth : Health
 {
+    [SerializeField] private AudioClip petrifySound;
+    
     protected override void Death()
     {
         Animator animator = GetComponentInChildren<Animator>();
+        SoundManager.Instance.PlaySound(petrifySound, 1f, false, transform);
         if(animator != null)
         animator.SetTrigger("Petrify");
         EnemyCounter.EnemyCount--;
