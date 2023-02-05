@@ -4,6 +4,8 @@ public class PlayerCombat : MonoBehaviour
 {
     [Header("Shared Stats")]
     [SerializeField] private GameObject absorbtionZone;
+
+    [SerializeField] private float inputErrorRoom;
     [Header("Swing")]
     [SerializeField] private float swingDamage;
     [SerializeField] private float reflectDamage;
@@ -26,6 +28,7 @@ public class PlayerCombat : MonoBehaviour
     private float swingDurationTimer;
     private float projectileHoldTimer;
     private float playerBaseSpeed;
+    private float inputErrorRoomTimer;
 
     [Header("References")] 
     [SerializeField] Animator anim;
@@ -65,7 +68,12 @@ public class PlayerCombat : MonoBehaviour
 
     void Swing()
     {
-        if (Input.GetButton("Fire1") && swingCooldownTimer < 0 && swingDurationTimer < 0 && !IsSwinging && !IsBlocking)
+        if (Input.GetButtonDown("Fire1"))
+        {
+            inputErrorRoomTimer = inputErrorRoom;
+        }
+        inputErrorRoomTimer -= Time.deltaTime;
+        if (inputErrorRoomTimer > 0 && swingCooldownTimer < 0 && swingDurationTimer < 0 && !IsSwinging && !IsBlocking)
         {
             swingDurationTimer = swingTime;
             swingCooldownTimer = swingCooldown;

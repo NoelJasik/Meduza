@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,11 +19,11 @@ public class AbsorbtionZone : MonoBehaviour
     [SerializeField] private AudioClip[] swordSwingSounds;
 
     bool hasWallHitPlayed = false;
-    
-    private void Start()
+
+    private void OnEnable()
     {
-       hasWallHitPlayed = false;
-       SoundManager.Instance.PlayRandom(swordSwingSounds);
+        hasWallHitPlayed = false;
+        SoundManager.Instance.PlayRandom(swordSwingSounds, 0.8f);
     }
 
     private void OnTriggerEnter(Collider other)

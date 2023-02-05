@@ -765,9 +765,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   absorbtionZone: {fileID: 1513470831}
+  inputErrorRoom: 0.1
   swingDamage: 5
   reflectDamage: 20
-  swingCooldown: 0.25
+  swingCooldown: 0.5
   swingTime: 0.15
   projectileDeflectSpeed: 40
   blockCooldown: 0.05
