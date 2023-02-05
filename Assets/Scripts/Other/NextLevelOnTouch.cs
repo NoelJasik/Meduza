@@ -9,6 +9,8 @@ public class NextLevelOnTouch : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Timer.Instance.isCounting = false;
+            Timer.Instance.SaveTime();
             SceneSwitcher.Instance.LoadNextScene();
         }
     }

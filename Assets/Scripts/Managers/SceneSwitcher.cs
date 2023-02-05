@@ -11,6 +11,7 @@ public class SceneSwitcher : MonoBehaviour
     [SerializeField] private AudioClip menuMusic;
     [SerializeField] private AudioClip gameMusic;
     [SerializeField] private AudioClip[] shingSounds;
+    public bool isTransitioning;
     
     void Awake()
     {
@@ -68,6 +69,7 @@ public class SceneSwitcher : MonoBehaviour
         if(sceneNum >= SceneManager.sceneCountInBuildSettings)
             sceneNum = SceneManager.sceneCountInBuildSettings - 1;
         
+        isTransitioning = true;
         transition.Play("SceneEnd");
         yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene(sceneNum);

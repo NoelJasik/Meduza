@@ -165,7 +165,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406283396}
   m_LocalRotation: {x: 0.10001559, y: 0.6041488, z: 0.07484957, w: 0.7870189}
-  m_LocalPosition: {x: 0.41386324, y: -0.45207262, z: 0.5701046}
+  m_LocalPosition: {x: 0.4138632, y: -0.45207262, z: 0.5701046}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5559,7 +5559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20e1e3d659e1440b9d40117377e3ff75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 10
+  maxHitPoints: 5
   hurtSounds:
   - {fileID: 8300000, guid: 1dc2a541bde1242be9b488cf7b14d0f1, type: 3}
   - {fileID: 8300000, guid: c8ee377c4cf824a52b1c063fa7eeb342, type: 3}
@@ -5570,6 +5570,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: c09aa954e4bd043edbffbfa0c7535bd7, type: 3}
   - {fileID: 8300000, guid: 7c620240fad024e21840dde6c95070a5, type: 3}
   - {fileID: 8300000, guid: e82a65c8c797b43b2af257c486b53cb8, type: 3}
+  thingToFlash: {fileID: 151405396}
+  anim: {fileID: 1406283398}
 --- !u!114 &3120078922343127756
 MonoBehaviour:
   m_ObjectHideFlags: 0

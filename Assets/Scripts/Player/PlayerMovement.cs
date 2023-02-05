@@ -95,6 +95,8 @@ public class PlayerMovement : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if(SceneSwitcher.Instance.isTransitioning)
+            return;
         Walking();
         if (isGrounded)
         {
@@ -143,7 +145,8 @@ public class PlayerMovement : MonoBehaviour
         if (inputHorizontal != 0 || inputVertical != 0)
         {
             HasMoved = true;
-            if (elapsedSinceLastStep > stepSoundDelay && isTouchingGround)
+            Timer.Instance.isCounting = true;
+            if (elapsedSinceLastStep > stepSoundDelay && isTouchingGround && isGrounded)
             {
                 SoundManager.Instance.PlayRandom(stepSounds);
                 elapsedSinceLastStep = 0f;
@@ -153,7 +156,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(inputHorizontal, 0, inputVertical);
         movement = transform.TransformDirection(movement);
         movement = movement.normalized;
-        movement *= accelerationSpeed;
+        movement *= accelerationSpeed * (isGrounded ? 1 : 0.75f);
         movement *= Time.deltaTime;
         Vector3 finalMovement = new Vector3(movement.x, 0, movement.z);
         rb.AddForce(finalMovement, ForceMode.VelocityChange);

@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerHealth : Health
 {
     private Vector3 startPos;
+    [SerializeField] private Animator anim;
 
     protected override void Start()
     {
@@ -12,6 +13,7 @@ public class PlayerHealth : Health
 
     protected override void Death()
     {
+        anim.Play("Die");
         SceneSwitcher.Instance.ReloadScene();
         //Respawn();
     }
