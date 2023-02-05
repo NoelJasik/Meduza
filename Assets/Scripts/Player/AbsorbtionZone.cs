@@ -23,6 +23,7 @@ public class AbsorbtionZone : MonoBehaviour
     private void OnEnable()
     {
         hasWallHitPlayed = false;
+        if(SoundManager.Instance != null)
         SoundManager.Instance.PlayRandom(swordSwingSounds, 0.8f);
     }
 
