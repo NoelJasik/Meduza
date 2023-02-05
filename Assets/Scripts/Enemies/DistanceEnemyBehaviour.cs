@@ -8,6 +8,7 @@ public class DistanceEnemyBehaviour : EnemyBehaviour
     
     [SerializeField] private AudioClip[] roarSounds;
 
+    
     protected override void Attack()
     {
         SpawnProjectile();

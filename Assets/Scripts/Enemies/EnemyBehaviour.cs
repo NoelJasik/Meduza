@@ -25,6 +25,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
       //  Invoke("BeginThinking", 0.1f);
       //  transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
       animator = GetComponent<Animator>();
+      animator.SetFloat("Speed", 1f);
     }
 
     void BeginThinking()
