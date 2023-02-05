@@ -14,7 +14,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
     protected PlayerHealth playerHealth;
     private const float ERROR = 0.1f;
     private const float turnLerpCoef = 0.05f;
-    bool isThinking = false;
+    bool isThinking = true;
 
     private Animator animator;
     
@@ -22,9 +22,9 @@ public abstract class EnemyBehaviour : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         playerHealth = PlayerMovement.PlayerTransform.GetComponent<PlayerHealth>();
-        Invoke("BeginThinking", 1.5f);
-        transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
-        animator = GetComponent<Animator>();
+      //  Invoke("BeginThinking", 0.1f);
+      //  transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+      animator = GetComponent<Animator>();
     }
 
     void BeginThinking()
@@ -46,7 +46,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
 
         if (!isThinking)
         {
-            SpawnAnimation();
+         //   SpawnAnimation();
             return;
         }
         Movement();
@@ -114,11 +114,13 @@ public abstract class EnemyBehaviour : MonoBehaviour
     protected abstract void Attack();
     
     // added gizmos
-    private void OnDrawGizmos()
+    public void OnDrawGizmos(Transform transformToDraw = null)
     {
+        if(transformToDraw == null) 
+            transformToDraw = transform;
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, triggerDistance);
+        Gizmos.DrawWireSphere(transformToDraw.position, triggerDistance);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, attackDistance);
+        Gizmos.DrawWireSphere(transformToDraw.position, attackDistance);
     }
 }

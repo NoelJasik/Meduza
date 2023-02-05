@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] private GameObject enemyPrefab;
+    [SerializeField] private GameObject[] enemyPrefabs;
+    [SerializeField] private int whichEnemy = 0;
     [SerializeField] private float spawnDelay = 1f;
     [SerializeField] private int killedEnemiesToSpawn = 0;
     
@@ -21,7 +22,13 @@ public class SpawnEnemy : MonoBehaviour
     void Spawning()
     {
         CancelInvoke("Spawning");
-        Instantiate(enemyPrefab, transform.position, transform.rotation);
+        Instantiate(enemyPrefabs[whichEnemy], transform.position, transform.rotation);
         Destroy(gameObject);
+    }
+    
+    //Draw gizmos of the enemy stats
+    private void OnDrawGizmos()
+    {
+        enemyPrefabs[whichEnemy].GetComponent<EnemyBehaviour>().OnDrawGizmos();
     }
 }
