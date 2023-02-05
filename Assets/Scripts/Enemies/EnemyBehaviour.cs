@@ -7,7 +7,8 @@ public abstract class EnemyBehaviour : MonoBehaviour
     public float attackDistance;
     [SerializeField] private float rechargeTime;
     [SerializeField] protected float damage;
-
+    [SerializeField] protected float attackVarience = 0;
+    
     private Vector3 target;
     private NavMeshAgent agent;
     private float timeElapsedSinceLastAttack = 0f;
@@ -59,7 +60,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
         if (distanceToPlayer - attackDistance < ERROR)  // can be negative
         {
             AttackContainer();
-            timeElapsedSinceLastAttack = 0f;
+            timeElapsedSinceLastAttack = Random.Range(0, attackVarience);
         }
     }
 

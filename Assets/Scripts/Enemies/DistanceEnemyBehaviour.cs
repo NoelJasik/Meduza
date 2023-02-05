@@ -5,7 +5,7 @@ public class DistanceEnemyBehaviour : EnemyBehaviour
     [SerializeField] protected GameObject projectilePrefab;
     [SerializeField] protected Transform shootPoint;
     [SerializeField] protected float projectileSpeed;
-    
+
     [SerializeField] private AudioClip[] roarSounds;
 
     
