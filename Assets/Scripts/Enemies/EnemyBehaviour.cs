@@ -3,8 +3,8 @@ using UnityEngine.AI;
 
 public abstract class EnemyBehaviour : MonoBehaviour
 {
-    [SerializeField] private float triggerDistance;
-    [SerializeField] private float attackDistance;
+    public float triggerDistance;
+    public float attackDistance;
     [SerializeField] private float rechargeTime;
     [SerializeField] protected float damage;
 
@@ -114,13 +114,11 @@ public abstract class EnemyBehaviour : MonoBehaviour
     protected abstract void Attack();
     
     // added gizmos
-    public void OnDrawGizmos(Transform transformToDraw = null)
+    public void OnDrawGizmos()
     {
-        if(transformToDraw == null) 
-            transformToDraw = transform;
         Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transformToDraw.position, triggerDistance);
+        Gizmos.DrawWireSphere(transform.position, triggerDistance);
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transformToDraw.position, attackDistance);
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
     }
 }

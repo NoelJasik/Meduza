@@ -29,6 +29,10 @@ public class SpawnEnemy : MonoBehaviour
     //Draw gizmos of the enemy stats
     private void OnDrawGizmos()
     {
-        enemyPrefabs[whichEnemy].GetComponent<EnemyBehaviour>().OnDrawGizmos();
+        EnemyBehaviour enemy = enemyPrefabs[whichEnemy].GetComponent<EnemyBehaviour>();
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, enemy.triggerDistance);
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, enemy.attackDistance);
     }
 }
