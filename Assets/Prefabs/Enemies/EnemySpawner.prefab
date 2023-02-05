@@ -1744,6 +1744,9 @@ MonoBehaviour:
   whichEnemy: 1
   spawnDelay: 2
   killedEnemiesToSpawn: 0
+  spawnEffect: {fileID: 4563368278826813044, guid: b61e327b626c74e35959c5a4ac8fca82,
+    type: 3}
+  spawnSound: {fileID: 8300000, guid: 6678e5c83743a4d71811f0e769f702d4, type: 3}
 --- !u!1 &6630010720778903444
 GameObject:
   m_ObjectHideFlags: 0

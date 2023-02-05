@@ -10,6 +10,8 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] private float spawnDelay = 1f;
     [SerializeField] private int killedEnemiesToSpawn = 0;
 
+    [SerializeField] private GameObject spawnEffect;
+    [SerializeField] private AudioClip spawnSound;
 
     private void Awake()
     {
@@ -28,6 +30,8 @@ public class SpawnEnemy : MonoBehaviour
     {
         CancelInvoke("Spawning");
         Instantiate(enemyPrefabs[whichEnemy], transform.position, transform.rotation);
+        Instantiate(spawnEffect, transform.position, transform.rotation);
+        SoundManager.Instance.PlaySound(spawnSound, 1f, true, transform);
         Destroy(gameObject);
     }
     
