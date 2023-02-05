@@ -1,8 +1,18 @@
+using UnityEngine;
+using UnityEngine.AI;
+
 public class EnemyHealth : Health
 {
     protected override void Death()
     {
-        Destroy(gameObject);
+        Animator animator = GetComponentInChildren<Animator>();
+        animator.SetTrigger("Petrify");
         EnemyCounter.EnemyCount--;
+        gameObject.GetComponent<EnemyBehaviour>().enabled = false;
+        gameObject.GetComponent<NavMeshAgent>().enabled = false;
+        gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        gameObject.layer = LayerMask.NameToLayer("Wall");
+        gameObject.tag = "Wall";
+        this.enabled = false;
     }
 }

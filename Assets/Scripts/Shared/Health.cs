@@ -33,7 +33,8 @@ public class Health : MonoBehaviour
             Death();
         }
 
-        StartCoroutine(flash());
+        //Doesnt work with models now
+        //StartCoroutine(flash());
     }
 
     IEnumerator flash()

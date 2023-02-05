@@ -13,8 +13,10 @@ public abstract class EnemyBehaviour : MonoBehaviour
     private float timeElapsedSinceLastAttack = 0f;
     protected PlayerHealth playerHealth;
     private const float ERROR = 0.1f;
-    private const float turnLerpCoef = 0.01f;
+    private const float turnLerpCoef = 0.05f;
     bool isThinking = false;
+
+    private Animator animator;
     
     private void Start()
     {
@@ -22,12 +24,14 @@ public abstract class EnemyBehaviour : MonoBehaviour
         playerHealth = PlayerMovement.PlayerTransform.GetComponent<PlayerHealth>();
         Invoke("BeginThinking", 1.5f);
         transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+        animator = GetComponentInChildren<Animator>();
     }
 
     void BeginThinking()
     {
         isThinking = true;
     }
+    
     void SpawnAnimation()
     {
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, 1.5f);
@@ -53,7 +57,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(PlayerMovement.PlayerTransform.position, transform.position);
         if (distanceToPlayer - attackDistance < ERROR)  // can be negative
         {
-            Attack();
+            AttackContainer();
             timeElapsedSinceLastAttack = 0f;
         }
     }
@@ -65,14 +69,17 @@ public abstract class EnemyBehaviour : MonoBehaviour
         if (distanceToPlayer > triggerDistance)
         {
             target = transform.position;
+            animator.SetFloat("Speed", 0f);
         }
         else if (distanceToPlayer > attackDistance)
         {
             target = PlayerMovement.PlayerTransform.position;
+            animator.SetFloat("Speed", 1f);
         }
         else if (distanceToPlayer < attackDistance && IsThereAnObstacleOnTheWayToPlayer())
         {
             target = PlayerMovement.PlayerTransform.position;
+            animator.SetFloat("Speed", 1f);
         }
 
         agent.SetDestination(target);
@@ -96,6 +103,12 @@ public abstract class EnemyBehaviour : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void AttackContainer()
+    {
+        animator.SetTrigger("Attack");
+        Attack();
     }
     
     protected abstract void Attack();
