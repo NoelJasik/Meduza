@@ -70,17 +70,25 @@ public abstract class EnemyBehaviour : MonoBehaviour
         if (distanceToPlayer > triggerDistance)
         {
             target = transform.position;
-            animator.SetFloat("Speed", 0f);
+            //animator.SetFloat("Speed", 0f);
         }
         else if (distanceToPlayer > attackDistance)
         {
             target = PlayerMovement.PlayerTransform.position;
-            animator.SetFloat("Speed", 1f);
+            //animator.SetFloat("Speed", 1f);
         }
-        else if (distanceToPlayer < attackDistance && IsThereAnObstacleOnTheWayToPlayer())
+        else
         {
-            target = PlayerMovement.PlayerTransform.position;
-            animator.SetFloat("Speed", 1f);
+            if (IsThereAnObstacleOnTheWayToPlayer())
+            {
+                target = PlayerMovement.PlayerTransform.position;
+                //animator.SetFloat("Speed", 1f);
+            }
+            else
+            {
+                target = transform.position;
+                //animator.SetFloat("Speed", 0f);
+            }
         }
 
         agent.SetDestination(target);
@@ -94,11 +102,12 @@ public abstract class EnemyBehaviour : MonoBehaviour
     {
         Vector3 raycastDirection = PlayerMovement.PlayerTransform.position - transform.position;
 
-        RaycastHit[] hits = Physics.RaycastAll(transform.position, raycastDirection);
+        RaycastHit[] hits = Physics.RaycastAll(transform.position, raycastDirection,
+            Vector3.Distance(PlayerMovement.PlayerTransform.position, transform.position));
 
         if (hits.Length == 0) return false;
-        Debug.Log(hits[0].collider.gameObject.layer);
-        if (hits[0].collider.gameObject.layer == LayerMask.NameToLayer("Wall") || hits[0].collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        if (hits[0].collider.gameObject.layer == LayerMask.NameToLayer("Wall") || 
+            hits[0].collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             return true;
         }
@@ -108,7 +117,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
 
     private void AttackContainer()
     {
-        animator.SetTrigger("Attack");
+        //animator.SetTrigger("Attack");
         Attack();
     }
     

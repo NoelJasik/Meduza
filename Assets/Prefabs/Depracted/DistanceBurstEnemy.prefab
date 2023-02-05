@@ -269,9 +269,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c7cf14002bf4e71999041debccbca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 10
-  hurtSounds: []
-  deathSounds: []
+  maxHitPoints: 15
+  hurtSounds:
+  - {fileID: 8300000, guid: 4c94ba9b4e607413788654b1bc8317e2, type: 3}
+  - {fileID: 8300000, guid: f4bbec83185b44cdbaae925362e38b0e, type: 3}
+  - {fileID: 8300000, guid: f4bbec83185b44cdbaae925362e38b0e, type: 3}
+  deathSounds:
+  - {fileID: 8300000, guid: b6df1126650a949809dae86188d0b3f2, type: 3}
+  - {fileID: 8300000, guid: a0872f2dff73242e4ab4a33bd5a95729, type: 3}
 --- !u!114 &4403448106568712089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,15 +289,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f97eb0ae283042fa86e45aef30128ca9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerDistance: 20
-  attackDistance: 8
+  triggerDistance: 50
+  attackDistance: 16
   rechargeTime: 4
   damage: 1
   projectilePrefab: {fileID: 8320802165472883533, guid: 98bb07dd8ca054d5aada19c8f685315b,
     type: 3}
   shootPoint: {fileID: 4403448105690920607}
   projectileSpeed: 3
-  roarSounds: []
+  roarSounds:
+  - {fileID: 8300000, guid: 6bebba20462794623be2a733e78edb3a, type: 3}
+  - {fileID: 8300000, guid: c93861f2945a24e77b609faece2a8997, type: 3}
+  - {fileID: 8300000, guid: 668782044e21c435b9fbff3cb3508e6a, type: 3}
+  - {fileID: 8300000, guid: 7accef197217745278cfb49e90f23970, type: 3}
+  - {fileID: 8300000, guid: f717a5546ca3c4ce888099a97853d965, type: 3}
   timeBetweenProjectilesInBurst: 0.25
   amountOfProjectileInBurst: 5
 --- !u!1 &6265532861922208307
