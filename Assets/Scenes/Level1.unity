@@ -611,7 +611,7 @@ PrefabInstance:
     - target: {fileID: 5915220131908233821, guid: 0e1f59edd782b72f5a7e0a285ce7547e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.25
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 5915220131908233821, guid: 0e1f59edd782b72f5a7e0a285ce7547e,
         type: 3}
@@ -982,6 +982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5915220131908233821, guid: 0e1f59edd782b72f5a7e0a285ce7547e,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5915220131908233821, guid: 0e1f59edd782b72f5a7e0a285ce7547e,
+        type: 3}
       propertyPath: m_LocalScale.y
       value: 4
       objectReference: {fileID: 0}
@@ -1003,7 +1008,7 @@ PrefabInstance:
     - target: {fileID: 5915220131908233821, guid: 0e1f59edd782b72f5a7e0a285ce7547e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.55999994
+      value: -4.56
       objectReference: {fileID: 0}
     - target: {fileID: 5915220131908233821, guid: 0e1f59edd782b72f5a7e0a285ce7547e,
         type: 3}
@@ -2372,7 +2377,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1699400943}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.27}
+  m_LocalPosition: {x: 0, y: 0, z: -2.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2602,7 +2607,7 @@ PrefabInstance:
     - target: {fileID: 5915220131908233821, guid: 0e1f59edd782b72f5a7e0a285ce7547e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.38
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: 5915220131908233821, guid: 0e1f59edd782b72f5a7e0a285ce7547e,
         type: 3}
@@ -3542,7 +3547,7 @@ PrefabInstance:
     - target: {fileID: 5032913668221742046, guid: 95b5ba1829b0752c59aa56d8bd06e8af,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -456.60614
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5032913668221742047, guid: 95b5ba1829b0752c59aa56d8bd06e8af,
         type: 3}

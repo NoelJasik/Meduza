@@ -35,7 +35,7 @@ public class Timer : MonoBehaviour
         PlayerPrefs.SetFloat("bestTime" + SceneManager.GetActiveScene().buildIndex, time);
     }
 
-    public String FormatTime(float timeToConvert)
+    public static String FormatTime(float timeToConvert)
     {
         String temp = "";
         float minutes = Mathf.FloorToInt(timeToConvert / 60);
