@@ -1739,8 +1739,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 6111764627682202225, guid: f9f0ab5e985ef4a519823444493ba5bb, type: 3}
-  - {fileID: 6601464991581706763, guid: 94fbb03302ea144a3b5c7fd0a07b83f8, type: 3}
-  - {fileID: 4403448106568711276, guid: a7e0eb03b1a9a4b898d36815ba9bb9f3, type: 3}
+  - {fileID: 7881059725405976894, guid: 5d29cf590785d443d953adde09a949eb, type: 3}
+  - {fileID: 6706834761274030839, guid: e3392e6f63a4b4b7d80ac0e1563a483b, type: 3}
   whichEnemy: 1
   spawnDelay: 1
   killedEnemiesToSpawn: 0
