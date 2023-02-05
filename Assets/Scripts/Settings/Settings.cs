@@ -68,7 +68,7 @@ public class Settings : MonoBehaviour
     
     IEnumerator ActivateWithDelay(GameObject thingToActivate, float delay, bool active)
     {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         thingToActivate.SetActive(active);
     }
 

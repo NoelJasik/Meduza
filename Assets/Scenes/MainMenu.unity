@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4623,21 +4623,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 934850557}
     m_Modifications:
-    - target: {fileID: 1178350671853950238, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178350671853950238, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1178350672057211850, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.000011444092
-      objectReference: {fileID: 0}
     - target: {fileID: 1178350672169333216, guid: 26a71718efc1a4c2ebdbcc2b9fddb2eb,
         type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -4848,16 +4833,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1482763492}
@@ -4866,41 +4841,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1482763492}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadNextScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: OnButtonClickedSound
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneSwitcher, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: SceneSwitcher, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2956824347140631545, guid: ff9e59044f5ab6541970f459169554ff,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6947960563173577254, guid: ff9e59044f5ab6541970f459169554ff,
         type: 3}
       propertyPath: m_Name
@@ -5139,31 +5079,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 934850557}
     m_Modifications:
-    - target: {fileID: 9055770099774745727, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055770099774745727, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055770099774745727, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055770100129769829, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9055770100129769829, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 9055770101083337968, guid: 21b0de1b04d26ad13b8300fcdc2f89a4,
         type: 3}
       propertyPath: m_Name
