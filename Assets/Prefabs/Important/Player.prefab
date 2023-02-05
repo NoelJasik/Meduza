@@ -5588,7 +5588,7 @@ MonoBehaviour:
   reflectDamage: 20
   swingCooldown: 0.4
   swingTime: 0.15
-  projectileDeflectSpeed: 40
+  projectileDeflectSpeed: 30
   blockCooldown: 0.05
   projectileHoldTime: 2.2
   holdedProjectileSpeed: 16
