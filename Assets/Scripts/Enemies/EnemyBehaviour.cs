@@ -70,24 +70,24 @@ public abstract class EnemyBehaviour : MonoBehaviour
         if (distanceToPlayer > triggerDistance)
         {
             target = transform.position;
-            //animator.SetFloat("Speed", 0f);
+            animator.SetFloat("Speed", 0f);
         }
         else if (distanceToPlayer > attackDistance)
         {
             target = PlayerMovement.PlayerTransform.position;
-            //animator.SetFloat("Speed", 1f);
+            animator.SetFloat("Speed", 1f);
         }
         else
         {
             if (IsThereAnObstacleOnTheWayToPlayer())
             {
                 target = PlayerMovement.PlayerTransform.position;
-                //animator.SetFloat("Speed", 1f);
+                animator.SetFloat("Speed", 1f);
             }
             else
             {
                 target = transform.position;
-                //animator.SetFloat("Speed", 0f);
+                animator.SetFloat("Speed", 0f);
             }
         }
 
@@ -117,7 +117,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
 
     private void AttackContainer()
     {
-        //animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
         Attack();
     }
     
