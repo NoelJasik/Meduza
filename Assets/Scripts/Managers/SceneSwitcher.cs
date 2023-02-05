@@ -69,7 +69,7 @@ public class SceneSwitcher : MonoBehaviour
             sceneNum = SceneManager.sceneCountInBuildSettings - 1;
         
         transition.Play("SceneEnd");
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(1f);
         SceneManager.LoadScene(sceneNum);
     }
 }
