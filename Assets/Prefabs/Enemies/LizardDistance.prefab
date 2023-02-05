@@ -132,7 +132,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 0
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 0
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9c7cf14002bf4e71999041debccbca0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 15
+  maxHitPoints: 10
   hurtSounds:
   - {fileID: 8300000, guid: 4c94ba9b4e607413788654b1bc8317e2, type: 3}
   - {fileID: 8300000, guid: f4bbec83185b44cdbaae925362e38b0e, type: 3}
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerDistance: 28
-  attackDistance: 28
+  attackDistance: 50
   rechargeTime: 1
   damage: 1
   projectilePrefab: {fileID: 8320802165472883533, guid: 98bb07dd8ca054d5aada19c8f685315b,

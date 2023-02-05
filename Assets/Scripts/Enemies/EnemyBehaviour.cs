@@ -14,15 +14,37 @@ public abstract class EnemyBehaviour : MonoBehaviour
     protected PlayerHealth playerHealth;
     private const float ERROR = 0.1f;
     private const float turnLerpCoef = 0.01f;
+    bool isThinking = false;
     
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         playerHealth = PlayerMovement.PlayerTransform.GetComponent<PlayerHealth>();
+        Invoke("BeginThinking", 1.5f);
+        transform.localScale = new Vector3(0.001f, 0.001f, 0.001f);
+    }
+
+    void BeginThinking()
+    {
+        isThinking = true;
+    }
+    void SpawnAnimation()
+    {
+        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, 1.5f);
+        if (transform.localScale.x > 0.9f && transform.localScale.y > 0.9f && transform.localScale.z > 0.9f)
+        {
+            transform.localScale = Vector3.one;
+        }
     }
     
     private void Update()
     {
+
+        if (!isThinking)
+        {
+            SpawnAnimation();
+            return;
+        }
         Movement();
         
         timeElapsedSinceLastAttack += Time.deltaTime;
@@ -39,7 +61,7 @@ public abstract class EnemyBehaviour : MonoBehaviour
     protected virtual void Movement()
     {
         float distanceToPlayer = Vector3.Distance(PlayerMovement.PlayerTransform.position, transform.position);
-
+        Debug.Log(IsThereAnObstacleOnTheWayToPlayer());
         if (distanceToPlayer > triggerDistance)
         {
             target = transform.position;
@@ -67,7 +89,8 @@ public abstract class EnemyBehaviour : MonoBehaviour
         RaycastHit[] hits = Physics.RaycastAll(transform.position, raycastDirection);
 
         if (hits.Length == 0) return false;
-        if (hits[0].collider.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        Debug.Log(hits[0].collider.gameObject.layer);
+        if (hits[0].collider.gameObject.layer == LayerMask.NameToLayer("Wall") || hits[0].collider.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             return true;
         }

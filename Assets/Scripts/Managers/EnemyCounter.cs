@@ -10,13 +10,13 @@ public class EnemyCounter : MonoBehaviour
 
     [SerializeField] private GameObject[] showWhenAllDead;
     public static int EnemyCount;
-    private int maxEnemyCount;
+    public static int MaxEnemyCount;
     
     // Start is called before the first frame update
     void Start()
     {
-        maxEnemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        EnemyCount = maxEnemyCount;
+        MaxEnemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        EnemyCount = MaxEnemyCount;
         foreach (GameObject thing in showWhenAllDead)
         {
             thing.SetActive(false);
@@ -33,8 +33,8 @@ public class EnemyCounter : MonoBehaviour
             Win();
             return;
         }
-        enemyCounter.gameObject.SetActive(EnemyCount < 5 && maxEnemyCount != 1);
-        enemyCounter.text = EnemyCount.ToString() + "Out of" + maxEnemyCount;
+        enemyCounter.gameObject.SetActive(EnemyCount < 5 && MaxEnemyCount != 1);
+        enemyCounter.text = EnemyCount.ToString() + " enemies left";
     }
 
     void Win()
