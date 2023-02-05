@@ -744,6 +744,75 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 294937428}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &385860410
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1098591759}
+    m_Modifications:
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.611
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6.310484
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 14.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4612495764691787734, guid: 5d76d58da19bdcc41bc5255392051c79,
+        type: 3}
+      propertyPath: m_Name
+      value: LevelEndDoors
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d76d58da19bdcc41bc5255392051c79, type: 3}
 --- !u!4 &396770082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6640989227874158462, guid: 3f3a3c51041a3c335bd70b34a88bbc86,
@@ -1484,6 +1553,7 @@ Transform:
   - {fileID: 73323263}
   - {fileID: 1213910592}
   - {fileID: 707418173}
+  - {fileID: 2032904803}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2205,6 +2275,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e6f4047efaabd67d9aacb54a1291eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2032904802 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4612495764691787734, guid: 5d76d58da19bdcc41bc5255392051c79,
+    type: 3}
+  m_PrefabInstance: {fileID: 385860410}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2032904803 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4612495764691787733, guid: 5d76d58da19bdcc41bc5255392051c79,
+    type: 3}
+  m_PrefabInstance: {fileID: 385860410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &678073193817690280 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3359192755582034335, guid: ec790a268b5e33bc2b06f4f9f860fc00,
@@ -2725,7 +2807,7 @@ PrefabInstance:
         type: 3}
       propertyPath: showWhenAllDead.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2032904802}
     - target: {fileID: 6088397555192421780, guid: d1815888ce49d648ba5dbd4736869991,
         type: 3}
       propertyPath: showWhenAllDead.Array.data[1]
