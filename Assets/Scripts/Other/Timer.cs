@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
 
     public void SaveTime()
     {
-        if(PlayerPrefs.GetFloat("bestTime" + SceneManager.GetActiveScene().buildIndex) > time)
+        if(PlayerPrefs.GetFloat("bestTime" + SceneManager.GetActiveScene().buildIndex) > time || PlayerPrefs.GetFloat("bestTime" + SceneManager.GetActiveScene().buildIndex) == 0)
         PlayerPrefs.SetFloat("bestTime" + SceneManager.GetActiveScene().buildIndex, time);
     }
 
